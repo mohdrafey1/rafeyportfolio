@@ -1,0 +1,241 @@
+.hero {
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+    width: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 70rem;
+    padding: 0 2.5rem;
+}
+
+.content {
+    align-items: center;
+    display: flex;
+    gap: 6rem;
+    height: 45rem;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-content {
+    align-items: center;
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    max-width: 50rem;
+    position: relative;
+}
+
+.hero-text h1 {
+    color: #2d2e32;
+    font-size: 3.1rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.wave {
+    animation-name: wave-animation;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    transform-origin: 70% 70%;
+    display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: rotate(0.0deg)
+    }
+
+    10% {
+        transform: rotate(14.0deg)
+    }
+
+    20% {
+        transform: rotate(-8.0deg)
+    }
+
+    30% {
+        transform: rotate(14.0deg)
+    }
+
+    40% {
+        transform: rotate(-4.0deg)
+    }
+
+    50% {
+        transform: rotate(10.0deg)
+    }
+
+    60% {
+        transform: rotate(0.0deg)
+    }
+
+    100% {
+        transform: rotate(0.0deg)
+    }
+}
+
+
+
+.hero-text p {
+    color: #555;
+    font-family: Mulish, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.hero-text .social-links {
+    cursor: pointer;
+    display: flex;
+    gap: 1.3rem;
+    margin: 2.5rem 0;
+}
+
+.hero-image {
+    animation: morph 8s ease-in-out infinite;
+    background-image: url(../../assets/pic.jpg);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 3px solid #2d2e32;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    height: 25rem;
+    width: 40rem;
+    position: relative;
+    transition: all 1s ease-in-out;
+}
+
+@keyframes morph {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+
+    50% {
+        border-radius: 40% 30% 60% 70% / 50% 70% 30% 60%;
+    }
+
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+}
+
+
+.social-links {
+    display: flex;
+    margin-top: 20px;
+}
+
+.social-links a {
+    margin-right: 15px;
+}
+
+.social-links img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
+}
+
+.skills {
+    align-items: center;
+    bottom: 0;
+    color: #767676;
+    display: flex;
+    font-size: 1.7rem;
+    left: 0;
+    position: absolute;
+    margin-bottom: 2rem;
+}
+
+.skills p {
+    border-right: 2px solid rgba(45, 46, 50, .5);
+    color: #2d2e32;
+    font-family: Mulish, sans-serif;
+    font-weight: 600;
+    margin-right: 7rem;
+    padding-right: 2rem;
+}
+
+.skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    list-style: none;
+}
+
+.skills ul li {
+    cursor: pointer;
+}
+
+
+@media (max-width: 1000px) {
+    .hero {
+        height: auto;
+        padding: 8rem 0;
+    }
+
+    .content {
+        flex-direction: column;
+        gap: 2rem;
+        height: auto;
+        text-align: center;
+    }
+
+    .hero-content {
+        flex-direction: column-reverse;
+        gap: 2rem;
+        height: auto;
+        text-align: center;
+    }
+
+    .hero-text p {
+        margin-bottom: 5rem;
+    }
+
+    .hero-text .social-links {
+        gap: 1.4rem;
+        justify-content: center;
+        margin-bottom: 3rem;
+        margin-top: -1rem;
+    }
+
+    .skills {
+        flex-direction: column;
+        position: static;
+    }
+
+    .skills p {
+        border-bottom: 2px solid rgba(45, 46, 50, .5);
+        border-right: none;
+        margin-bottom: 3rem;
+        margin-right: 0;
+        padding-bottom: 1rem;
+        padding-right: 0;
+    }
+
+    .skills ul {
+        justify-content: center;
+    }
+
+    .hero-image {
+        height: 350px;
+        width: 350px;
+    }
+}

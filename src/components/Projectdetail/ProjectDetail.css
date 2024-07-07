@@ -1,0 +1,116 @@
+.project-detail {
+    position: relative;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    max-width: 100%;
+    margin: auto;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 1050;
+    height: 80vh;
+    display: flex;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgb(255, 0, 0);
+    width: 25px;
+    padding: 1px;
+}
+
+.project-content {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.left-side {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.project-image {
+    width: 45%;
+    height: 40%;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 3px solid black;
+}
+
+.right-side {
+    width: 50%;
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right-side h2 {
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+
+.right-side p {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #2d2e32;
+}
+
+.project-detail-links {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.project-detail-links a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 15px;
+    background-color: #dd44a2;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.project-detail-links a:hover {
+    background-color: #005bb5;
+}
+
+.modal {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 92%;
+    max-height: 90vh;
+    min-height: 85vh;
+    outline: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1040;
+}
