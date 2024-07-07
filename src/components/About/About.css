@@ -105,7 +105,7 @@
 
 @media (max-width: 1000px) {
     .about {
-        padding: 5rem 0;
+        padding: 3rem 0;
     }
 
     .about-content {
@@ -125,4 +125,13 @@
         margin-top: 2rem;
     }
 
+    .image img {
+        width: 20rem;
+        height: 16rem;
+    }
+
+    .image {
+        width: 22rem;
+        height: 17rem;
+    }
 }

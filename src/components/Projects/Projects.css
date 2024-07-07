@@ -74,3 +74,9 @@
 .project-links button:hover {
     background-color: #005bb5;
 }
+
+@media (max-width: 1000px) {
+    .project-container {
+        padding: 0px 0px;
+    }
+}
