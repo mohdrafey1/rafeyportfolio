@@ -116,8 +116,9 @@
 }
 
 @media (max-width: 1000px) {
+
     .project-detail {
-        height: 95vh;
+        height: 85vh;
     }
 
     .project-content {
