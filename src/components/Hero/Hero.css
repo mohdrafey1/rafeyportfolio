@@ -191,22 +191,30 @@
         padding: 8rem 0;
     }
 
+    .container {
+        padding: 0 1rem;
+    }
+
     .content {
         flex-direction: column;
-        gap: 2rem;
+        gap: 1.5rem;
         height: auto;
         text-align: center;
     }
 
     .hero-content {
         flex-direction: column-reverse;
-        gap: 2rem;
+        gap: 1rem;
         height: auto;
         text-align: center;
     }
 
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
     .hero-text p {
-        margin-bottom: 5rem;
+        margin-bottom: 1rem;
     }
 
     .hero-text .social-links {
@@ -235,7 +243,7 @@
     }
 
     .hero-image {
-        height: 350px;
-        width: 350px;
+        height: 280px;
+        width: 280px;
     }
 }
