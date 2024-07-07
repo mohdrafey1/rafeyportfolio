@@ -9,7 +9,7 @@
     padding: 15px 40px;
     position: fixed;
     top: 0;
-    width: 99%;
+    width: 100%;
     z-index: 200;
     transition: all 0.3s ease-in-out;
 }
