@@ -1,8 +1,17 @@
-# React + Vite
+# Mohd Rafey's Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio website! This project showcases my skills, projects, and experience as a Computer Science Engineering student focusing on web development and software engineering.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## About the Project
+
+This portfolio website is a single-page application (SPA) built using React. It provides an overview of my professional background, skills, and projects. The website is designed to be fully responsive, ensuring a smooth user experience on both desktop and mobile devices.
+
+## Features
+
+- Home section with a dynamic name animation
+- About section with a brief introduction and photo
+- Projects section with interactive project cards
+- Contact section with links to email, GitHub, and LinkedIn
+- Responsive design for mobile and desktop views
+- Animated navigation menu for mobile devices
