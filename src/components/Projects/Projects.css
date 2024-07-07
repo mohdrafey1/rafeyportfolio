@@ -79,4 +79,13 @@
     .project-container {
         padding: 0px 0px;
     }
+
+    .project-container h2 {
+        margin-top: 2rem;
+        font-size: 2rem;
+    }
+
+    .project-info h3 {
+        font-size: 1.4rem;
+    }
 }
