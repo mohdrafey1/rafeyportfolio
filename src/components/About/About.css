@@ -6,10 +6,10 @@
     align-items: center;
 }
 
-.container {
+.about-container {
     margin: 0 auto;
     max-width: 70rem;
-    padding: 0 2.5rem;
+    padding: 0 2rem;
 }
 
 .about-content {
@@ -141,5 +141,6 @@
     .image {
         width: 22rem;
         height: 17rem;
+        box-shadow: 0px 0px 0px #0000008c;
     }
 }

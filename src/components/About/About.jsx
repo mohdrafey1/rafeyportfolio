@@ -5,7 +5,7 @@ import aboutPic from '../../assets/about.jpg';
 function About() {
     return (
         <section className="about" id="about">
-            <div className="container">
+            <div className="about-container">
                 <div className="about-content">
                     <div className="image">
                         {' '}
