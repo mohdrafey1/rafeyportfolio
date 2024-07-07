@@ -139,6 +139,7 @@
 
     .project-image {
         width: 80%;
+        height: 70%;
         margin: 10px;
         flex-shrink: 0;
         scroll-snap-align: center;
