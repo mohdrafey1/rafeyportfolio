@@ -128,7 +128,7 @@
     background: #5029bc;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1000px) {
     .contact-container {
         width: 90%;
         padding: 30px 40px 40px 35px;
@@ -165,5 +165,9 @@
     .contact-container .contact-content .right-side {
         width: 100%;
         margin-left: 0;
+    }
+
+    .contact-content .right-side p {
+        font-size: 1rem;
     }
 }
