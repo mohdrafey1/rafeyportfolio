@@ -131,11 +131,9 @@
 
     .left-side {
         width: 100%;
-        height: 100vh;
+        height: auto;
         display: flex;
-        overflow-x: auto;
-        /* overflow-y: hidden; */
-        scroll-snap-type: x mandatory;
+        overflow: auto;
     }
 
     .project-image {
