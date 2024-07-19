@@ -22,10 +22,10 @@ import simon1 from '../../assets/simon1.png';
 import simon2 from '../../assets/simon2.png';
 import simon3 from '../../assets/simon3.png';
 import simon4 from '../../assets/simon1.png';
-import weather1 from '../../assets/weather1.png';
-import weather2 from '../../assets/weather2.png';
-import weather3 from '../../assets/weather3.png';
-import weather4 from '../../assets/weather1.png';
+import grocery1 from '../../assets/grocery-mart1.png';
+import grocery2 from '../../assets/grocery-mart2.png';
+import grocery3 from '../../assets/grocery-mart3.png';
+import grocery4 from '../../assets/grocery-mart4.png';
 
 const projectData = [
     {
@@ -45,6 +45,16 @@ const projectData = [
     },
     {
         id: 2,
+        images: [grocery1, grocery2, grocery3, grocery4],
+        title: 'Extra Grocery Mart',
+        description:
+            'This project is a React-based e-commerce website built with React and Material-UI (MUI). It features a responsive navbar, product listings, and a modal for product details. The site allows users to browse products, view details.',
+        github: 'https://github.com/mohdrafey1/Extra-Grocery-Mart',
+        demo: 'https://extra-grocery-mart.vercel.app/',
+        tech: 'Javascript, React, React Modal, Material Ui.',
+    },
+    {
+        id: 3,
         images: [moviesearch1, moviesearch2, moviesearch3, moviesearch4],
         title: 'Movie Search App',
         description:
@@ -54,7 +64,7 @@ const projectData = [
         tech: 'HTML, CSS, Javascript, React, React Modal, Axios.',
     },
     {
-        id: 3,
+        id: 4,
         images: [
             currencyconverter1,
             currencyconverter2,
@@ -69,7 +79,7 @@ const projectData = [
         tech: 'HTML, CSS, Javascript, API.',
     },
     {
-        id: 4,
+        id: 5,
         images: [lottery1, lottery2, lottery3, lottery4],
         title: 'Lottery App',
         description:
@@ -79,7 +89,7 @@ const projectData = [
         tech: 'React, Tailwind.',
     },
     {
-        id: 5,
+        id: 6,
         images: [simon1, simon2, simon3, simon4],
         title: 'Simon Game',
         description:
@@ -87,16 +97,6 @@ const projectData = [
         github: 'https://github.com/mohdrafey1/Simon-Game',
         demo: 'https://mohdrafey1.github.io/Simon-Game/',
         tech: 'HTML, CSS, Javascript.',
-    },
-    {
-        id: 6,
-        images: [weather1, weather2, weather3, weather4],
-        title: 'Weather App',
-        description:
-            'This project is a simple weather application built using React.js and utilizes an API to fetch real-time weather data. The application displays weather information for a specified location, providing users with current weather conditions as well as a forecast.',
-        github: 'https://github.com/mohdrafey1/Weather_App_React',
-        demo: 'https://weather-app-react-eta-nine.vercel.app/',
-        tech: 'React, CSS.',
     },
 ];
 
