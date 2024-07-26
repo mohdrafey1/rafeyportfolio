@@ -18,10 +18,10 @@ import lottery1 from '../../assets/lottery1.png';
 import lottery2 from '../../assets/lottery2.png';
 import lottery3 from '../../assets/lottery3.png';
 import lottery4 from '../../assets/lottery4.png';
-import simon1 from '../../assets/simon1.png';
-import simon2 from '../../assets/simon2.png';
-import simon3 from '../../assets/simon3.png';
-import simon4 from '../../assets/simon1.png';
+import learning1 from '../../assets/learningblog1.png';
+import learning2 from '../../assets/learningblog2.png';
+import learning3 from '../../assets/learningblog3.png';
+import learning4 from '../../assets/learningblog4.png';
 import grocery1 from '../../assets/grocery-mart1.png';
 import grocery2 from '../../assets/grocery-mart2.png';
 import grocery3 from '../../assets/grocery-mart3.png';
@@ -55,6 +55,16 @@ const projectData = [
     },
     {
         id: 3,
+        images: [learning1, learning2, learning3, learning4],
+        title: 'Learning Blog',
+        description:
+            'This project is a full-stack web application built with React for the frontend and Appwrite for the backend. The application allows users to create, read, update, and delete posts. Authentication is handled using Appwrite, and the project is styled using Tailwind CSS. Additionally, it includes TinyMCE for rich text editing.',
+        github: 'https://github.com/mohdrafey1/Learning-blog',
+        demo: 'https://good-learning.vercel.app/',
+        tech: 'React, Tailwind, Redux, Appwrite, TinyMice , React-Hook-Form.',
+    },
+    {
+        id: 4,
         images: [moviesearch1, moviesearch2, moviesearch3, moviesearch4],
         title: 'Movie Search App',
         description:
@@ -64,7 +74,7 @@ const projectData = [
         tech: 'HTML, CSS, Javascript, React, React Modal, Axios.',
     },
     {
-        id: 4,
+        id: 5,
         images: [
             currencyconverter1,
             currencyconverter2,
@@ -79,7 +89,7 @@ const projectData = [
         tech: 'HTML, CSS, Javascript, API.',
     },
     {
-        id: 5,
+        id: 6,
         images: [lottery1, lottery2, lottery3, lottery4],
         title: 'Lottery App',
         description:
@@ -87,16 +97,6 @@ const projectData = [
         github: 'https://github.com/mohdrafey1/LotteryApp',
         demo: 'https://lottery-app-mu.vercel.app/',
         tech: 'React, Tailwind.',
-    },
-    {
-        id: 6,
-        images: [simon1, simon2, simon3, simon4],
-        title: 'Simon Game',
-        description:
-            'Simon Game is a classic memory game where players have to remember and repeat a sequence of lights and sounds. The game provides increasing levels of difficulty by adding more steps to the sequence as the player progresses.',
-        github: 'https://github.com/mohdrafey1/Simon-Game',
-        demo: 'https://mohdrafey1.github.io/Simon-Game/',
-        tech: 'HTML, CSS, Javascript.',
     },
 ];
 
