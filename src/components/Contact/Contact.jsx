@@ -30,8 +30,8 @@ function Contact() {
                         <div className="topic-text">Send us a message</div>
                         <p>
                             If you have any work from me or any types of queries
-                            related to my tutorial, you can send me a message
-                            from here. It's my pleasure to help you.
+                            related to my work, you can send me a message from
+                            here. It's my pleasure to help you.
                         </p>
                         <form action="#">
                             <div className="input-box">
