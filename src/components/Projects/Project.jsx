@@ -10,14 +10,14 @@ import moviesearch1 from '../../assets/movie-search1.png';
 import moviesearch2 from '../../assets/movie-search2.png';
 import moviesearch3 from '../../assets/movie-search3.png';
 import moviesearch4 from '../../assets/movie-search4.png';
-import currencyconverter1 from '../../assets/currencyconverter1.png';
-import currencyconverter2 from '../../assets/currencyconverter2.png';
-import currencyconverter3 from '../../assets/currencyconverter3.png';
-import currencyconverter4 from '../../assets/currencyconverter3.png';
-import lottery1 from '../../assets/lottery1.png';
-import lottery2 from '../../assets/lottery2.png';
-import lottery3 from '../../assets/lottery3.png';
-import lottery4 from '../../assets/lottery4.png';
+import ss1 from '../../assets/ss1.png';
+import ss2 from '../../assets/ss2.png';
+import ss3 from '../../assets/ss3.png';
+import ss4 from '../../assets/ss4.png';
+import pss1 from '../../assets/pss1.png';
+import pss2 from '../../assets/pss2.png';
+import pss3 from '../../assets/pss3.png';
+import pss4 from '../../assets/pss4.png';
 import learning1 from '../../assets/learningblog1.png';
 import learning2 from '../../assets/learningblog2.png';
 import learning3 from '../../assets/learningblog3.png';
@@ -30,6 +30,26 @@ import grocery4 from '../../assets/grocery-mart4.png';
 const projectData = [
     {
         id: 1,
+        images: [ss1, ss2, ss3, ss4],
+        title: 'Student Senior',
+        description:
+            'Student Senior is a dynamic platform that connects college students for mentorship, guidance, and community building. The website allows students to ask questions, share knowledge, and trade items within the same college. Senior students can register to mentor juniors of their college , creating a collaborative ecosystem of knowledge sharing.',
+        github: 'https://github.com/mohdrafey1/studentsenior-frontend',
+        demo: 'https://www.studentsenior.com/',
+        tech: 'React, Tailwind, API',
+    },
+    {
+        id: 2,
+        images: [pss1, pss2, pss3, pss4],
+        title: 'Student Senior Dashboard',
+        description:
+            'The Student Senior Dashboard is an administrative interface designed to manage and oversee all the data and operations of the Student Senior platform. This dashboard provides a centralized control panel for managing users, academic resources, community posts, mentorship pairings, and item listings. Admins can easily review, update, or delete data, ensuring that the platform remains organized and efficient. ',
+        github: 'https://github.com/mohdrafey1/studentsenior-frontend',
+        demo: 'https://panel.studentsenior.com',
+        tech: 'HTML, Bootstrap, Express.',
+    },
+    {
+        id: 3,
         images: [
             exploreheaven1,
             exploreheaven2,
@@ -44,7 +64,7 @@ const projectData = [
         tech: 'HTML, CSS, Javascript, EJS, NodeJs, PassportJs, Bootstrap, ExpressJs, Mongodb, cloudinary, Render.',
     },
     {
-        id: 2,
+        id: 4,
         images: [grocery1, grocery2, grocery3, grocery4],
         title: 'Extra Grocery Mart',
         description:
@@ -54,7 +74,7 @@ const projectData = [
         tech: 'Javascript, React, React Modal, Material Ui.',
     },
     {
-        id: 3,
+        id: 5,
         images: [learning1, learning2, learning3, learning4],
         title: 'Learning Blog',
         description:
@@ -64,39 +84,14 @@ const projectData = [
         tech: 'React, Tailwind, Redux, Appwrite, TinyMice , React-Hook-Form.',
     },
     {
-        id: 4,
+        id: 6,
         images: [moviesearch1, moviesearch2, moviesearch3, moviesearch4],
         title: 'Movie Search App',
         description:
-            'This project is a React-based application that allows users to search for movies using the OMDb API. It includes components for displaying a list of movies, detailed movie information, and a search form for fetching movies by title. The project incorporates context for state management, modal popups for detailed views, and responsive styling.',
+            'This project is a React-based application that allows users to search for movies using the OMDb API. It includes components for displaying a list of movies, detailed movie information, and a search form for fetching movies by title.',
         github: 'https://github.com/mohdrafey1/movie-search-app',
         demo: 'https://movie-search-app-ruddy-one.vercel.app/',
         tech: 'HTML, CSS, Javascript, React, React Modal, Axios.',
-    },
-    {
-        id: 5,
-        images: [
-            currencyconverter1,
-            currencyconverter2,
-            currencyconverter3,
-            currencyconverter4,
-        ],
-        title: 'Currency Converter',
-        description:
-            'The Currency Converter is a simple command-line application that allows users to convert between different currencies. This project utilizes real-time exchange rates retrieved from an API to perform the currency conversions.',
-        github: 'https://github.com/mohdrafey1/Currency-converter-project',
-        demo: 'https://mohdrafey1.github.io/Currency-converter-project/',
-        tech: 'HTML, CSS, Javascript, API.',
-    },
-    {
-        id: 6,
-        images: [lottery1, lottery2, lottery3, lottery4],
-        title: 'Lottery App',
-        description:
-            'Welcome to the Lottery Website project! This project aims to provide users with a platform to participate in lotteries online. Built using React and Tailwind CSS, this website offers a seamless and visually appealing experience for users interested in trying their luck.',
-        github: 'https://github.com/mohdrafey1/LotteryApp',
-        demo: 'https://lottery-app-mu.vercel.app/',
-        tech: 'React, Tailwind.',
     },
 ];
 
