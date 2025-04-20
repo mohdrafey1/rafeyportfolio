@@ -238,12 +238,17 @@ function Projects() {
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
                 contentLabel="Project Details"
-                className="max-w-4xl mx-auto p-6 rounded-xl shadow-2xl outline-none bg-white dark:bg-gray-800 text-gray-800 dark:text-white"
-                overlayClassName="fixed inset-0 bg-black/70 flex items-center justify-center p-4 z-50"
+                className="modal-content max-w-4xl w-full mx-auto p-0 rounded-xl shadow-2xl outline-none bg-white dark:bg-gray-800 text-gray-800 dark:text-white"
+                overlayClassName="fixed inset-0 bg-black/70 flex items-center justify-center p-4 z-50 backdrop-blur-sm"
+                closeTimeoutMS={200}
+                ariaHideApp={false}
                 style={{
                     content: {
                         transform: "translateY(0px)",
-                        transition: "transform 0.3s ease-out",
+                        transition:
+                            "transform 0.2s ease-out, opacity 0.2s ease-out",
+                        maxHeight: "90vh",
+                        height: "auto",
                     },
                 }}
             >

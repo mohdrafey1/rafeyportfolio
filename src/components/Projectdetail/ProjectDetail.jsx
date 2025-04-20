@@ -2,12 +2,12 @@ import React from "react";
 
 function ProjectDetail({ project, onClose }) {
     return (
-        <div className="relative flex h-[80vh] w-full overflow-hidden rounded-lg bg-white dark:bg-gray-800 shadow-lg">
+        <div className="relative flex flex-col h-[80vh] w-full bg-white dark:bg-gray-800">
             {/* Close Button */}
             <button
-                className="absolute right-2 top-2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-red-500 text-white hover:bg-red-600 transition-colors focus:outline-none"
+                className="absolute right-2 top-2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-red-500 text-white hover:bg-red-600 transition-colors focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 dark:focus:ring-offset-gray-800"
                 onClick={onClose}
-                aria-label="Close"
+                aria-label="Close modal"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -23,20 +23,20 @@ function ProjectDetail({ project, onClose }) {
                 </svg>
             </button>
 
-            {/* Project Content Container */}
-            <div className="flex w-full flex-col md:flex-row">
-                {/* Right Side - Project Information */}
-                <div className="w-full md:w-1/2 p-6 flex flex-col justify-center">
-                    <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-white">
+            {/* Project Content Container - Scrollable on mobile */}
+            <div className="flex flex-col md:flex-row h-full overflow-y-auto">
+                {/* Left Side - Project Information (Scrollable if needed) */}
+                <div className="w-full md:w-1/2 p-4 md:p-6 overflow-y-auto">
+                    <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-gray-800 dark:text-white">
                         {project.title}
                     </h2>
 
-                    <div className="space-y-6 text-gray-700 dark:text-gray-300">
+                    <div className="space-y-4 md:space-y-6 text-gray-700 dark:text-gray-300">
                         <div>
                             <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">
                                 Description
                             </h3>
-                            <p className="text-base leading-relaxed">
+                            <p className="text-sm md:text-base leading-relaxed">
                                 {project.description}
                             </p>
                         </div>
@@ -49,7 +49,7 @@ function ProjectDetail({ project, onClose }) {
                                 {project.tech.split(",").map((tech, index) => (
                                     <span
                                         key={index}
-                                        className="px-3 py-1 text-sm bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 rounded-full"
+                                        className="px-2 py-1 text-xs md:text-sm bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 rounded-full"
                                     >
                                         {tech.trim()}
                                     </span>
@@ -57,17 +57,18 @@ function ProjectDetail({ project, onClose }) {
                             </div>
                         </div>
 
-                        <div className="pt-4">
-                            <div className="flex flex-wrap gap-4">
+                        <div className="pt-2 md:pt-4">
+                            <div className="flex flex-wrap gap-2 md:gap-4">
                                 <a
                                     href={project.github}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-2 px-4 py-2 bg-gray-800 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors"
+                                    className="flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 text-sm md:text-base bg-gray-800 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors"
+                                    aria-label="GitHub repository"
                                 >
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
-                                        className="h-5 w-5"
+                                        className="h-4 w-4 md:h-5 md:w-5"
                                         fill="currentColor"
                                         viewBox="0 0 24 24"
                                     >
@@ -75,46 +76,55 @@ function ProjectDetail({ project, onClose }) {
                                     </svg>
                                     GitHub Repo
                                 </a>
-                                <a
-                                    href={project.demo}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
-                                >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="h-5 w-5"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
+                                {project.demo && (
+                                    <a
+                                        href={project.demo}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 text-sm md:text-base bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+                                        aria-label="Live demo"
                                     >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                                        />
-                                    </svg>
-                                    Live Demo
-                                </a>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="h-4 w-4 md:h-5 md:w-5"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth={2}
+                                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                                            />
+                                        </svg>
+                                        Live Demo
+                                    </a>
+                                )}
                             </div>
                         </div>
                     </div>
                 </div>
-                {/* Left Side - Images Gallery */}
-                <div className="w-full md:w-1/2 flex flex-wrap justify-around items-center overflow-x-auto p-4">
-                    {project.images.map((image, index) => (
-                        <div
-                            key={index}
-                            className="w-full h-auto m-2 transition-transform hover:scale-105"
-                        >
-                            <img
-                                src={image}
-                                alt={`${project.title} screenshot ${index + 1}`}
-                                className="w-full h-full object-cover rounded-md border-2 border-gray-200 dark:border-gray-700"
-                            />
-                        </div>
-                    ))}
+
+                {/* Right Side - Images Gallery (Scrollable on mobile) */}
+                <div className="w-full md:w-1/2 p-4 md:p-6 overflow-y-auto border-t md:border-t-0 md:border-l border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/50">
+                    <div className="space-y-4">
+                        {project.images.map((image, index) => (
+                            <div
+                                key={index}
+                                className="w-full transition-transform hover:scale-[1.02]"
+                            >
+                                <img
+                                    src={image}
+                                    alt={`${project.title} screenshot ${
+                                        index + 1
+                                    }`}
+                                    className="w-full h-auto max-h-64 md:max-h-96 object-contain rounded-md border border-gray-200 dark:border-gray-700 shadow-sm mx-auto"
+                                    loading="lazy"
+                                />
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
