@@ -7,6 +7,7 @@ import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import Experience from "./components/Experience/Experience";
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
             <Header />
             <Hero />
             <About />
+            <Experience />
             <Projects />
             <Contact />
             <Footer />
