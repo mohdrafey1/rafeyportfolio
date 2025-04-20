@@ -1,5 +1,4 @@
 .hero {
-    background-color: #f9f9f9;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -38,7 +37,6 @@
 }
 
 .hero-text h1 {
-    color: #2d2e32;
     font-size: 3.1rem;
     line-height: 1.2;
     margin-bottom: 2rem;
@@ -90,7 +88,7 @@
 
 
 .hero-text p {
-    color: #555;
+
     font-family: Mulish, sans-serif;
     font-size: 1.4rem;
     font-weight: 500;
@@ -162,19 +160,13 @@
 
 .skills p {
     border-right: 2px solid rgba(45, 46, 50, .5);
-    color: #2d2e32;
+
     font-family: Mulish, sans-serif;
     font-weight: 600;
-    margin-right: 7rem;
+    margin-right: 3rem;
     padding-right: 2rem;
 }
 
-.skills ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3rem;
-    list-style: none;
-}
 
 .skills ul li {
     cursor: pointer;

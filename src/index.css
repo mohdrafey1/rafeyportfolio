@@ -1,10 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
 
-* {
-    font-family: "Libre Baskerville", serif;
-    scrollbar-color: #8e8e8e #fff;
-    scrollbar-width: thin;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
 }
