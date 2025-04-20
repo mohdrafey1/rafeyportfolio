@@ -11,7 +11,7 @@ import Experience from "./components/Experience/Experience";
 
 function App() {
     return (
-        <div className="flex flex-col items-center">
+        <div>
             <Header />
             <Hero />
             <About />
