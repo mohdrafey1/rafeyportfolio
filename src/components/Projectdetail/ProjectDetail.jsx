@@ -1,79 +1,182 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import {
+    X,
+    Github,
+    ExternalLink,
+    ChevronLeft,
+    ChevronRight,
+} from "lucide-react";
 
 function ProjectDetail({ project, onClose }) {
+    const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+    // Prevent scroll on body when component is mounted
+    useEffect(() => {
+        document.body.style.overflow = "hidden";
+        return () => {
+            document.body.style.overflow = "auto";
+        };
+    }, []);
+
+    // Dynamic theme based on project color
+    const themeConfig = {
+        indigo: {
+            gradient: "from-indigo-600 to-purple-600",
+            accent: "bg-indigo-600",
+            ring: "ring-indigo-500",
+            text: "text-indigo-600 dark:text-indigo-400",
+            buttonBg: "bg-indigo-600 hover:bg-indigo-700",
+            badgeBg: "bg-indigo-100 dark:bg-indigo-900/40",
+            badgeText: "text-indigo-700 dark:text-indigo-300",
+        },
+        blue: {
+            gradient: "from-blue-600 to-cyan-600",
+            accent: "bg-blue-600",
+            ring: "ring-blue-500",
+            text: "text-blue-600 dark:text-blue-400",
+            buttonBg: "bg-blue-600 hover:bg-blue-700",
+            badgeBg: "bg-blue-100 dark:bg-blue-900/40",
+            badgeText: "text-blue-700 dark:text-blue-300",
+        },
+        teal: {
+            gradient: "from-teal-600 to-emerald-600",
+            accent: "bg-teal-600",
+            ring: "ring-teal-500",
+            text: "text-teal-600 dark:text-teal-400",
+            buttonBg: "bg-teal-600 hover:bg-teal-700",
+            badgeBg: "bg-teal-100 dark:bg-teal-900/40",
+            badgeText: "text-teal-700 dark:text-teal-300",
+        },
+        green: {
+            gradient: "from-green-600 to-emerald-600",
+            accent: "bg-green-600",
+            ring: "ring-green-500",
+            text: "text-green-600 dark:text-green-400",
+            buttonBg: "bg-green-600 hover:bg-green-700",
+            badgeBg: "bg-green-100 dark:bg-green-900/40",
+            badgeText: "text-green-700 dark:text-green-300",
+        },
+        purple: {
+            gradient: "from-purple-600 to-indigo-600",
+            accent: "bg-purple-600",
+            ring: "ring-purple-500",
+            text: "text-purple-600 dark:text-purple-400",
+            buttonBg: "bg-purple-600 hover:bg-purple-700",
+            badgeBg: "bg-purple-100 dark:bg-purple-900/40",
+            badgeText: "text-purple-700 dark:text-purple-300",
+        },
+        red: {
+            gradient: "from-red-600 to-orange-600",
+            accent: "bg-red-600",
+            ring: "ring-red-500",
+            text: "text-red-600 dark:text-red-400",
+            buttonBg: "bg-red-600 hover:bg-red-700",
+            badgeBg: "bg-red-100 dark:bg-red-900/40",
+            badgeText: "text-red-700 dark:text-red-300",
+        },
+    };
+
+    const theme = themeConfig[project?.color || "purple"];
+
+    // Navigation for image gallery
+    const goToNextImage = () => {
+        setActiveImageIndex((prevIndex) =>
+            prevIndex === project.images.length - 1 ? 0 : prevIndex + 1
+        );
+    };
+
+    const goToPrevImage = () => {
+        setActiveImageIndex((prevIndex) =>
+            prevIndex === 0 ? project.images.length - 1 : prevIndex - 1
+        );
+    };
+
     return (
-        <div className="relative flex flex-col h-[80vh] w-full bg-white dark:bg-gray-800">
-            {/* Close Button */}
+        <div className="relative flex flex-col h-full w-full bg-white dark:bg-gray-800 overflow-hidden rounded-xl shadow-2xl">
+            {/* Top color bar */}
+            <div
+                className={`h-1 w-full bg-gradient-to-r ${theme.gradient}`}
+            ></div>
+
+            {/* Close button */}
             <button
-                className="absolute right-2 top-2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-red-500 text-white hover:bg-red-600 transition-colors focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 dark:focus:ring-offset-gray-800"
+                className="absolute right-3 top-3 z-20 flex h-8 w-8 items-center justify-center rounded-full bg-black/20 text-white hover:bg-black/40 backdrop-blur-md transition-colors"
                 onClick={onClose}
                 aria-label="Close modal"
             >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                >
-                    <path
-                        fillRule="evenodd"
-                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                        clipRule="evenodd"
-                    />
-                </svg>
+                <X className="h-5 w-5" />
             </button>
 
-            {/* Project Content Container - Scrollable on mobile */}
-            <div className="flex flex-col md:flex-row h-full overflow-y-auto">
-                {/* Left Side - Project Information (Scrollable if needed) */}
-                <div className="w-full md:w-1/2 p-4 md:p-6 overflow-y-auto">
-                    <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-gray-800 dark:text-white">
+            {/* Project content wrapper - making it scrollable for small screens */}
+            <div className="flex flex-col h-full overflow-y-auto">
+                {/* Project header with category badge - visible on all screens */}
+                <div className="px-4 pt-6 pb-2 md:hidden">
+                    <h2 className="text-2xl font-bold text-gray-800 dark:text-white">
                         {project.title}
                     </h2>
+                </div>
 
-                    <div className="space-y-4 md:space-y-6 text-gray-700 dark:text-gray-300">
-                        <div>
-                            <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">
-                                Description
-                            </h3>
-                            <p className="text-sm md:text-base leading-relaxed">
-                                {project.description}
-                            </p>
-                        </div>
-
-                        <div>
-                            <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">
-                                Technologies
-                            </h3>
-                            <div className="flex flex-wrap gap-2">
-                                {project.tech.split(",").map((tech, index) => (
-                                    <span
-                                        key={index}
-                                        className="px-2 py-1 text-xs md:text-sm bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 rounded-full"
-                                    >
-                                        {tech.trim()}
-                                    </span>
-                                ))}
+                {/* Main content area - flexible layout for different screen sizes */}
+                <div className="flex flex-col md:flex-row flex-grow">
+                    {/* Left side - Project information */}
+                    <div className="w-full md:w-1/2 p-4 md:p-6 md:overflow-y-auto order-2 md:order-1">
+                        <div className="space-y-4 md:space-y-6">
+                            {/* Project header - hidden on mobile, shown on larger screens */}
+                            <div className="hidden md:block">
+                                <span
+                                    className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${theme.badgeBg} ${theme.badgeText} mb-2`}
+                                >
+                                    {project.category}
+                                </span>
+                                <h2 className="text-3xl font-bold text-gray-800 dark:text-white">
+                                    {project.title}
+                                </h2>
                             </div>
-                        </div>
 
-                        <div className="pt-2 md:pt-4">
-                            <div className="flex flex-wrap gap-2 md:gap-4">
+                            {/* Description */}
+                            <div>
+                                <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100 flex items-center gap-2">
+                                    About
+                                    <div
+                                        className={`h-px flex-grow ${theme.accent} opacity-20 ml-2`}
+                                    ></div>
+                                </h3>
+                                <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+                                    {project.description}
+                                </p>
+                            </div>
+
+                            {/* Technologies */}
+                            <div>
+                                <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100 flex items-center gap-2">
+                                    Technologies
+                                    <div
+                                        className={`h-px flex-grow ${theme.accent} opacity-20 ml-2`}
+                                    ></div>
+                                </h3>
+                                <div className="flex flex-wrap gap-2">
+                                    {project.tech
+                                        .split(",")
+                                        .map((tech, index) => (
+                                            <span
+                                                key={index}
+                                                className={`px-2 py-1 text-xs md:text-sm ${theme.badgeBg} ${theme.badgeText} rounded-full`}
+                                            >
+                                                {tech.trim()}
+                                            </span>
+                                        ))}
+                                </div>
+                            </div>
+
+                            {/* Links */}
+                            <div className="mt-4 md:mt-6 flex flex-wrap gap-2 md:gap-3">
                                 <a
                                     href={project.github}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 text-sm md:text-base bg-gray-800 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors"
-                                    aria-label="GitHub repository"
+                                    className="flex items-center gap-1 md:gap-2 px-3 py-1.5 md:px-4 md:py-2 text-sm bg-gray-800 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors"
                                 >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="h-4 w-4 md:h-5 md:w-5"
-                                        fill="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                                    </svg>
+                                    <Github className="h-3.5 w-3.5 md:h-4 md:w-4" />
                                     GitHub Repo
                                 </a>
                                 {project.demo && (
@@ -81,49 +184,78 @@ function ProjectDetail({ project, onClose }) {
                                         href={project.demo}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 text-sm md:text-base bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
-                                        aria-label="Live demo"
+                                        className={`flex items-center gap-1 md:gap-2 px-3 py-1.5 md:px-4 md:py-2 text-sm text-white rounded-lg transition-colors ${theme.buttonBg}`}
                                     >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="h-4 w-4 md:h-5 md:w-5"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth={2}
-                                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                                            />
-                                        </svg>
+                                        <ExternalLink className="h-3.5 w-3.5 md:h-4 md:w-4" />
                                         Live Demo
                                     </a>
                                 )}
                             </div>
                         </div>
                     </div>
-                </div>
 
-                {/* Right Side - Images Gallery (Scrollable on mobile) */}
-                <div className="w-full md:w-1/2 p-4 md:p-6 overflow-y-auto border-t md:border-t-0 md:border-l border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/50">
-                    <div className="space-y-4">
-                        {project.images.map((image, index) => (
-                            <div
-                                key={index}
-                                className="w-full transition-transform hover:scale-[1.02]"
-                            >
+                    {/* Right side - Image gallery */}
+                    <div className="w-full md:w-1/2 border-b md:border-b-0 md:border-l border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/30 flex flex-col order-1 md:order-2">
+                        {/* Main image display with navigation controls */}
+                        <div className="relative flex-grow flex items-center justify-center p-4 md:p-6">
+                            <div className="relative w-full h-48 sm:h-64 md:h-full max-h-96 rounded-lg overflow-hidden group">
+                                {/* Image */}
                                 <img
-                                    src={image}
+                                    src={project.images[activeImageIndex]}
                                     alt={`${project.title} screenshot ${
-                                        index + 1
+                                        activeImageIndex + 1
                                     }`}
-                                    className="w-full h-auto max-h-64 md:max-h-96 object-contain rounded-md border border-gray-200 dark:border-gray-700 shadow-sm mx-auto"
-                                    loading="lazy"
+                                    className="w-full h-full object-contain bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700"
                                 />
+
+                                {/* Image counter */}
+                                <div className="absolute bottom-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">
+                                    {activeImageIndex + 1} /{" "}
+                                    {project.images.length}
+                                </div>
+
+                                {/* Navigation buttons (always visible on mobile, hover on desktop) */}
+                                <button
+                                    onClick={goToPrevImage}
+                                    className="absolute left-2 top-1/2 -translate-y-1/2 h-8 w-8 bg-black/20 hover:bg-black/40 text-white rounded-full flex items-center justify-center md:opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm"
+                                    aria-label="Previous image"
+                                >
+                                    <ChevronLeft className="h-5 w-5" />
+                                </button>
+                                <button
+                                    onClick={goToNextImage}
+                                    className="absolute right-2 top-1/2 -translate-y-1/2 h-8 w-8 bg-black/20 hover:bg-black/40 text-white rounded-full flex items-center justify-center md:opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm"
+                                    aria-label="Next image"
+                                >
+                                    <ChevronRight className="h-5 w-5" />
+                                </button>
                             </div>
-                        ))}
+                        </div>
+
+                        {/* Thumbnails - more compact on mobile */}
+                        <div className="px-4 pb-4 md:p-6 md:pt-0 hidden md:flex">
+                            <div className="grid grid-cols-4 gap-1 md:gap-2">
+                                {project.images.map((img, index) => (
+                                    <button
+                                        key={index}
+                                        onClick={() =>
+                                            setActiveImageIndex(index)
+                                        }
+                                        className={`relative border rounded-md overflow-hidden h-12 md:h-16 transition-all ${
+                                            activeImageIndex === index
+                                                ? `ring-2 ${theme.ring} ring-offset-1 dark:ring-offset-gray-800`
+                                                : "opacity-70 hover:opacity-100 border-gray-200 dark:border-gray-700"
+                                        }`}
+                                    >
+                                        <img
+                                            src={img}
+                                            alt={`Thumbnail ${index + 1}`}
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

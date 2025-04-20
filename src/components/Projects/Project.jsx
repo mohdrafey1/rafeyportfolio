@@ -548,7 +548,7 @@ function Projects() {
     return (
         <section
             id="projects"
-            className="py-16 px-4 md:px-8 w-full transition-colors duration-300 bg-gray-50 dark:bg-gray-900"
+            className="py-24 px-4 md:px-8 w-full transition-colors duration-300 bg-gray-50 dark:bg-gray-900"
         >
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
