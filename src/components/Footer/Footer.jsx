@@ -1,5 +1,6 @@
 import React from "react";
 import { Linkedin, Github, Heart, Mail, ArrowUp } from "lucide-react";
+import BubbleAnimation from "../UI/BubbleAnimation";
 
 export default function Footer() {
     const scrollToTop = () => {
@@ -10,7 +11,9 @@ export default function Footer() {
     };
 
     return (
-        <footer className="relative w-full bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 py-12">
+        <footer className="relative w-full h-full bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 py-12">
+            <BubbleAnimation id="footer-canvas" />
+
             {/* Decorative Elements */}
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute -top-16 -left-16 w-32 h-32 bg-purple-600/10 rounded-full blur-xl"></div>
@@ -29,7 +32,7 @@ export default function Footer() {
                 </button>
             </div>
 
-            <div className="max-w-6xl mx-auto px-4 md:px-8 relative z-10">
+            <div className="max-w-6xl mx-auto px-4 md:px-8 relative ">
                 {/* Top section with logo and links */}
                 <div className="flex flex-col md:flex-row justify-between items-center mb-12 pb-10 border-b border-gray-700/50">
                     <div className="flex flex-col mb-8 md:mb-0">

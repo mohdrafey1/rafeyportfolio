@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 
-function BubbleAnimation() {
+function BubbleAnimation({ id = "particles-canvas" }) {
     useEffect(() => {
         // Background particles effect setup
-        const canvas = document.getElementById("particles-canvas");
+        const canvas = document.getElementById(id);
         if (canvas) {
             const ctx = canvas.getContext("2d");
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
 
             ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -57,18 +57,18 @@ function BubbleAnimation() {
             animate();
 
             const handleResize = () => {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
+                canvas.width = canvas.offsetWidth;
+                canvas.height = canvas.offsetHeight;
             };
 
             window.addEventListener("resize", handleResize);
             return () => window.removeEventListener("resize", handleResize);
         }
-    }, []);
+    }, [id]);
 
     return (
         <>
-            <canvas id="particles-canvas" className="absolute inset-0 z-5" />
+            <canvas id={id} className="absolute inset-0 z-5 w-full h-full" />
         </>
     );
 }
