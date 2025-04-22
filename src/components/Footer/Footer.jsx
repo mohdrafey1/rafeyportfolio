@@ -56,10 +56,10 @@ export default function Footer() {
                             Projects
                         </a>
                         <a
-                            href="#skills"
+                            href="#experience"
                             className="text-gray-300 hover:text-white transition-colors duration-300"
                         >
-                            Skills
+                            Experience
                         </a>
                         <a
                             href="#contact"

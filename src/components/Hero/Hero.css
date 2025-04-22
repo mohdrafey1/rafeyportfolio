@@ -1,27 +1,109 @@
 .hero-image {
-    animation: morph 8s ease-in-out infinite;
+    /* Enhanced morphing animation with smoother transitions */
+    animation: morph 15s ease-in-out infinite alternate;
     background-image: url(../../assets/pic.jpg);
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
+
+    /* Multiple borders with glow effect */
     border: 3px solid #2d2e32;
+    box-shadow:
+        0 0 20px rgba(45, 46, 50, 0.3),
+        0 0 60px rgba(45, 46, 50, 0.1),
+        inset 0 0 20px rgba(255, 255, 255, 0.1);
+
+    /* Initial border radius with more complex shape */
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+
     height: 25rem;
-    width: 40rem;
+    width: 25rem;
     position: relative;
-    transition: all 1s ease-in-out;
+
+    /* Enhanced transition properties */
+    transition: all 1s ease-in-out, filter 0.5s ease;
+    margin-left: 5rem;
+
+    /* Subtle hover effects */
+    filter: saturate(1.05) brightness(1.05);
 }
 
+/* Hover state enhancements */
+.hero-image:hover {
+    filter: saturate(1.2) brightness(1.15);
+    transform: scale(1.03);
+    box-shadow:
+        0 0 25px rgba(45, 46, 50, 0.4),
+        0 0 70px rgba(45, 46, 50, 0.2),
+        inset 0 0 25px rgba(255, 255, 255, 0.15);
+}
+
+/* Enhanced keyframes with more shape variations */
 @keyframes morph {
     0% {
         border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+        transform: translateY(-5px) rotate(1deg);
     }
 
     50% {
         border-radius: 40% 30% 60% 70% / 50% 70% 30% 60%;
+        transform: translateY(0) rotate(0deg);
+    }
+
+    75% {
+        border-radius: 65% 35% 45% 55% / 40% 45% 65% 55%;
+        transform: translateY(-5px) rotate(-1deg);
     }
 
     100% {
         border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* Add a subtle floating effect with a separate animation */
+.hero-image {
+    animation:
+        morph 15s ease-in-out infinite alternate,
+        float 6s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Optional: Add a subtle overlay for depth */
+.hero-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+/* For modern browsers: add backdrop-filter for a frosted glass effect border */
+@supports (backdrop-filter: blur(5px)) {
+    .hero-image {
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
     }
 }

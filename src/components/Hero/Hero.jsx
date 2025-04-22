@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { Github, Linkedin, ArrowDown, Code } from "lucide-react";
-import pic from "../../assets/pic.jpg";
 import BubbleAnimation from "../UI/BubbleAnimation";
+import "./Hero.css";
 
 function Hero() {
     const techStackRef = useRef(null);
@@ -149,7 +149,7 @@ function Hero() {
 
                             <a
                                 href="#experience"
-                                className="group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-gray-700 dark:text-white border border-gray-200 dark:border-gray-700 hover:border-transparent rounded-lg transition-all duration-300"
+                                className="group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-gray-700 dark:text-white border border-gray-300 dark:border-gray-700 hover:border-transparent rounded-lg transition-all duration-300"
                             >
                                 <span className="absolute inset-0 w-0 bg-gray-100 dark:bg-gray-800 group-hover:w-full transition-all duration-300"></span>
                                 <span className="relative">
@@ -182,47 +182,7 @@ function Hero() {
                     </div>
 
                     {/* Right column - Floating image */}
-                    <div className="relative hidden lg:block">
-                        <div className="absolute inset-0 bg-gradient-to-br from-pink-600/30 to-indigo-600/30 dark:from-pink-500/20 dark:to-indigo-500/20 opacity-0 hover:opacity-100 rounded-xl transition-opacity duration-500" />
-
-                        <div className="w-full h-96 bg-gradient-to-br from-gray-100 to-white dark:from-gray-800 dark:to-gray-900 rounded-xl p-1 shadow-xl transform hover:rotate-2 transition-transform duration-500">
-                            <div className="w-full h-full bg-gray-50 dark:bg-gray-900 rounded-lg overflow-hidden relative">
-                                <img
-                                    src={pic}
-                                    alt="Mohd Rafey"
-                                    className="w-full h-full object-cover "
-                                />
-
-                                {/* Code decoration */}
-                                <div className="absolute top-4 left-4 p-2 bg-black/50 backdrop-blur-sm rounded-md text-xs text-white font-mono">
-                                    <span className="text-pink-400">const</span>{" "}
-                                    <span className="text-indigo-300">
-                                        developer
-                                    </span>{" "}
-                                    = {"{"}
-                                    <br />
-                                    <span className="pl-4 text-pink-400">
-                                        name
-                                    </span>
-                                    :{" "}
-                                    <span className="text-green-300">
-                                        'Mohd Rafey'
-                                    </span>
-                                    ,
-                                    <br />
-                                    <span className="pl-4 text-pink-400">
-                                        passion
-                                    </span>
-                                    :{" "}
-                                    <span className="text-green-300">
-                                        'Web Development'
-                                    </span>
-                                    <br />
-                                    {"}"};
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div className="hero-image hidden lg:block"></div>
                 </div>
 
                 {/* Scroll indicator */}
