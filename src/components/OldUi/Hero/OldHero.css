@@ -106,7 +106,7 @@
 
 .hero-image1 {
     animation: morph 8s ease-in-out infinite;
-    background-image: url(../../assets/pic.jpg);
+    background-image: url(../../../assets/pic.jpg);
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -196,6 +196,7 @@
         gap: 1.5rem;
         height: auto;
         text-align: center;
+        width: 200px;
     }
 
     .hero-content {
@@ -238,7 +239,7 @@
         justify-content: center;
     }
 
-    .hero-image {
+    .hero-image1 {
         height: 280px;
         width: 280px;
     }
