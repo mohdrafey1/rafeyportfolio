@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Menu, X, Sun, Moon, FileText } from "lucide-react";
+import { usePreference } from "../../PreferenceContext";
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [isDarkMode, setIsDarkMode] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [activeSection, setActiveSection] = useState("home");
+    const { isDarkMode, setIsDarkMode, isOldUI, setIsOldUI } = usePreference();
 
     // Handle initial theme setup
     useEffect(() => {
@@ -149,30 +150,29 @@ export default function Header() {
                         ))}
                     </ul>
 
-                    {/* Resume Button with hover effect */}
-                    <a
-                        href="https://drive.google.com/file/d/1PHncSqQhzbgZoFIv5496gyNDEDqgIYi4/view?usp=drive_link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group relative overflow-hidden flex items-center mr-6 px-6 py-2.5 bg-gradient-to-r from-pink-600 to-indigo-600 
-                            dark:from-pink-500 dark:to-indigo-500 text-white rounded-full transition-all duration-300 
-                            shadow-md hover:shadow-lg hover:shadow-pink-500/20 dark:hover:shadow-pink-400/20"
-                    >
-                        <span
-                            className="absolute inset-0 w-full h-full bg-gradient-to-r from-indigo-600 to-pink-600 
-                            dark:from-indigo-500 dark:to-pink-500 transform scale-x-0 group-hover:scale-x-100 
-                            transition-transform duration-500 origin-left"
-                        ></span>
-                        <FileText className="w-4 h-4 mr-2 relative z-10" />
-                        <span className="font-medium relative z-10">
-                            Resume
+                    {/* UI Toggle Switch */}
+                    <div className="flex items-center space-x-2">
+                        <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
+                            New UI
                         </span>
-                    </a>
+                        <label className="relative inline-flex items-center cursor-pointer">
+                            <input
+                                type="checkbox"
+                                checked={isOldUI}
+                                onChange={() => setIsOldUI(!isOldUI)}
+                                className="sr-only peer"
+                            />
+                            <div className="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-gradient-to-r peer-checked:from-pink-600 peer-checked:to-indigo-600 dark:peer-checked:from-pink-500 dark:peer-checked:to-indigo-500"></div>
+                        </label>
+                        <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
+                            Old UI
+                        </span>
+                    </div>
 
                     {/* Enhanced Theme Toggle */}
                     <button
                         onClick={() => setIsDarkMode(!isDarkMode)}
-                        className={`p-2.5 rounded-full transition-all duration-500 
+                        className={`p-2.5 mx-4 rounded-full transition-all duration-500 
                             ${
                                 isDarkMode
                                     ? "bg-gray-800 rotate-180"
@@ -187,6 +187,26 @@ export default function Header() {
                             <Moon className="w-5 h-5 text-indigo-600" />
                         )}
                     </button>
+
+                    {/* Resume Button with hover effect */}
+                    <a
+                        href="https://drive.google.com/file/d/1PHncSqQhzbgZoFIv5496gyNDEDqgIYi4/view?usp=drive_link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hidden group relative overflow-hidden xl:flex items-center mr-6 px-6 py-2.5 bg-gradient-to-r from-pink-600 to-indigo-600 
+                            dark:from-pink-500 dark:to-indigo-500 text-white rounded-full transition-all duration-300 
+                            shadow-md hover:shadow-lg hover:shadow-pink-500/20 dark:hover:shadow-pink-400/20"
+                    >
+                        <span
+                            className="absolute inset-0 w-full h-full bg-gradient-to-r from-indigo-600 to-pink-600 
+                            dark:from-indigo-500 dark:to-pink-500 transform scale-x-0 group-hover:scale-x-100 
+                            transition-transform duration-500 origin-left"
+                        ></span>
+                        <FileText className="w-4 h-4 mr-2 relative z-10" />
+                        <span className="font-medium relative z-10">
+                            Resume
+                        </span>
+                    </a>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -277,7 +297,7 @@ export default function Header() {
 
                 {/* Resume Button - Mobile */}
                 <div
-                    className={`mt-10 px-4 transform transition-all duration-300 delay-500 
+                    className={`mt-10 transform transition-all duration-300 delay-500 
                     ${
                         menuOpen
                             ? "translate-y-0 opacity-100"
@@ -288,14 +308,33 @@ export default function Header() {
                         href="https://drive.google.com/file/d/1PHncSqQhzbgZoFIv5496gyNDEDqgIYi4/view?usp=drive_link"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center w-full px-6 py-3.5 bg-gradient-to-r from-pink-600 to-indigo-600 
+                        className="flex items-center justify-center w-full px-14 py-3.5 bg-gradient-to-r from-pink-600 to-indigo-600 
                             dark:from-pink-500 dark:to-indigo-500 text-white rounded-xl transition-all duration-300 
                             shadow-md hover:shadow-lg hover:shadow-pink-500/20 dark:hover:shadow-pink-400/20"
                         onClick={toggleMenu}
                     >
                         <FileText className="w-5 h-5 mr-2" />
-                        <span className="font-medium">View Resume</span>
+                        <span className="">Resume</span>
                     </a>
+                </div>
+
+                {/* Mobile UI Toggle Switch */}
+                <div className="mt-8 px-4 flex items-center justify-center space-x-3">
+                    <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
+                        New UI
+                    </span>
+                    <label className="relative inline-flex items-center cursor-pointer">
+                        <input
+                            type="checkbox"
+                            checked={isOldUI}
+                            onChange={() => setIsOldUI(!isOldUI)}
+                            className="sr-only peer"
+                        />
+                        <div className="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-gradient-to-r peer-checked:from-pink-600 peer-checked:to-indigo-600 dark:peer-checked:from-pink-500 dark:peer-checked:to-indigo-500"></div>
+                    </label>
+                    <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
+                        Old UI
+                    </span>
                 </div>
             </div>
         </>
