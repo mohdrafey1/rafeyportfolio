@@ -99,7 +99,7 @@ function Hero() {
         >
             {/* Background elements */}
             <BubbleAnimation />
-            <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/10 to-pink-900/10 dark:bg-gray-900 z-0" />
+            <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/10 to-pink-900/10 dark:bg-black z-0" />
 
             {/* Decorative circles */}
             <div className="absolute -top-20 -left-20 w-64 h-64 bg-pink-600/10 dark:bg-pink-600/20 rounded-full filter blur-3xl" />

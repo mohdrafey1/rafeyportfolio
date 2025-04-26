@@ -6,29 +6,28 @@ const experienceData = [
         id: 1,
         position: "MERN Stack Developer Intern",
         company: "Reactify Labs",
-        location: "Remote",
+        location: "Remote (Noida)",
         duration: "March 2025 - Present",
         description:
-            "Working on full-stack development using the MERN (MongoDB, Express.js, React, Node.js) stack. Building responsive web applications and implementing front-end interfaces with React and Tailwind CSS. Contributing to RESTful API development and database integration.",
-        skills: ["React", "Node.js", "Express", "Tailwind CSS", "REST API"],
+            "Contributing to full-stack web application development using the MERN stack. Building responsive user interfaces with React and Tailwind CSS, and developing scalable back-end services with Node.js and Express. Assisting in the creation and integration of RESTful APIs and managing MongoDB databases for efficient data handling.",
+        skills: ["React", "Node.js", "Express", "Tailwind CSS", "Redux"],
         color: "purple",
     },
-
     {
         id: 2,
         position: "Freelance Developer",
         company: "Al Resala",
-        location: "Al Ain Remote",
+        location: "Remote (Alain, UAE)",
         duration: "December 2024",
         description:
-            "Completed a one-month freelance project developing a custom web application. Worked directly with clients to understand requirements and deliver solutions. Implemented responsive design and provide best services.",
+            "Delivered a custom web application for a UAE-based tailoring shop as part of a one-month freelance project. Collaborated directly with clients to gather requirements and deliver a responsive, user-friendly system that significantly streamlined daily operations and reduced manual effort.\n\nKey Features:\n- Booking Management: Add, list, and track customer bookings effortlessly.\n- Delivery Automation: Automatically mark orders as delivered based on payment status.\n- Service Listings: Manage a diverse range of tailoring services.\n- Expense Tracking: Record and monitor shop expenses easily.\n- Advanced Filters: Enabled quick access to key data, reducing managerial overhead by 70%.\n\nAutomation Highlights:\n- Dynamic Totals: Real-time calculations for bookings, deliveries, and expenses based on applied filters.\n- Smart Delivery Status: Automated delivery updates triggered by payment confirmations.",
         skills: [
             "React",
             "Node.js",
             "MongoDB",
             "Express",
             "Tailwind CSS",
-            "REST API",
+            "Redux",
         ],
         color: "blue",
     },
@@ -36,10 +35,10 @@ const experienceData = [
         id: 3,
         position: "Full Stack Developer Intern",
         company: "Vegingo",
-        location: "Lucknow, Remote",
+        location: "Remote (Lucknow)",
         duration: "July 2024 - October 2024",
         description:
-            "During my internship at Vegingo, I contributed significantly to their established e-commerce platform, focusing on both backend and frontend development. My role spanned across multiple areas including UI redesign, API development, frontend validation, and comprehensive testing. My responsibilities included redesigning the existing dashboard using Bootstrap, ensuring it had a more user-friendly interface. I also collaborated with the frontend team to work on data validation using React, ensuring accurate and secure data flow across the website. I contributed as a tester, identifying and fixing bugs in both the dashboard and the frontend.Additionally, I implemented phone pe payment gateway Integration on the website.",
+            "Contributed to Vegingo’s e-commerce platform with a focus on both front-end and back-end development. Redesigned the existing dashboard using Bootstrap to enhance user experience and improve usability. Collaborated with the front-end team to implement robust data validation using React, ensuring secure and accurate user interactions. Actively participated in testing efforts, identifying and fixing bugs across the dashboard and website. Additionally, integrated the PhonePe payment gateway to streamline the checkout process and improve payment efficiency.",
         skills: [
             "JavaScript",
             "React",

@@ -14,18 +14,18 @@ import exploreheaven1 from "../../assets/explore-heaven1.png";
 import exploreheaven2 from "../../assets/explore-heaven2.png";
 import exploreheaven3 from "../../assets/explore-heaven3.png";
 import exploreheaven4 from "../../assets/explore-heaven4.png";
-import moviesearch1 from "../../assets/movie-search1.png";
-import moviesearch2 from "../../assets/movie-search2.png";
-import moviesearch3 from "../../assets/movie-search3.png";
-import moviesearch4 from "../../assets/movie-search4.png";
-import ss1 from "../../assets/ss1.png";
-import ss2 from "../../assets/ss2.png";
-import ss3 from "../../assets/ss3.png";
-import ss4 from "../../assets/ss4.png";
-import pss1 from "../../assets/pss1.png";
-import pss2 from "../../assets/pss2.png";
-import pss3 from "../../assets/pss3.png";
-import pss4 from "../../assets/pss4.png";
+import ss1 from "../../assets/studentsenior/ss1.png";
+import ss2 from "../../assets/studentsenior/ss2.png";
+import ss3 from "../../assets/studentsenior/ss3.png";
+import ss4 from "../../assets/studentsenior/ss4.png";
+import ssb1 from "../../assets/studentsenior/ssb1.png";
+import ssb2 from "../../assets/studentsenior/ssb2.png";
+import ssb3 from "../../assets/studentsenior/ssb3.png";
+import ssb4 from "../../assets/studentsenior/ssb4.png";
+import ssd1 from "../../assets/studentsenior/ssd1.png";
+import ssd2 from "../../assets/studentsenior/ssd2.png";
+import ssd3 from "../../assets/studentsenior/ssd3.png";
+import ssd4 from "../../assets/studentsenior/ssd4.png";
 import learning1 from "../../assets/learningblog1.png";
 import learning2 from "../../assets/learningblog2.png";
 import learning3 from "../../assets/learningblog3.png";
@@ -41,18 +41,18 @@ const placeholderImages = {
     exploreheaven2: exploreheaven2,
     exploreheaven3: exploreheaven3,
     exploreheaven4: exploreheaven4,
-    moviesearch1: moviesearch1,
-    moviesearch2: moviesearch2,
-    moviesearch3: moviesearch3,
-    moviesearch4: moviesearch4,
     ss1: ss1,
     ss2: ss2,
     ss3: ss3,
     ss4: ss4,
-    pss1: pss1,
-    pss2: pss2,
-    pss3: pss3,
-    pss4: pss4,
+    ssb1: ssb1,
+    ssb2: ssb2,
+    ssb3: ssb3,
+    ssb4: ssb4,
+    ssd1: ssd1,
+    ssd2: ssd2,
+    ssd3: ssd3,
+    ssd4: ssd4,
     learning1: learning1,
     learning2: learning2,
     learning3: learning3,
@@ -74,32 +74,49 @@ const projectData = [
         ],
         title: "Student Senior",
         description:
-            "Student Senior is a dynamic platform that connects college students for mentorship, guidance, and community building. The website allows students to ask questions, share knowledge, and trade items within the same college. Senior students can register to mentor juniors of their college, creating a collaborative ecosystem of knowledge sharing.",
+            "Student Senior is a dynamic platform designed to connect college students for mentorship, guidance, and community building. It enables students to ask questions, share knowledge, and trade items within their college ecosystem. Senior students can register as mentors to guide juniors, fostering a collaborative and supportive environment.",
         github: "https://github.com/mohdrafey1/studentsenior-frontend",
         demo: "https://www.studentsenior.com/",
-        tech: "React, Tailwind, API",
+        tech: "React, Tailwind CSS, REST API, Redux, Pdf-Dist",
         color: "indigo",
         category: "Education",
     },
     {
         id: 2,
         images: [
-            placeholderImages.pss1,
-            placeholderImages.pss2,
-            placeholderImages.pss3,
-            placeholderImages.pss4,
+            placeholderImages.ssd1,
+            placeholderImages.ssd2,
+            placeholderImages.ssd3,
+            placeholderImages.ssd4,
         ],
         title: "Student Senior Dashboard",
         description:
-            "The Student Senior Dashboard is an administrative interface designed to manage and oversee all the data and operations of the Student Senior platform. This dashboard provides a centralized control panel for managing users, academic resources, community posts, mentorship pairings, and item listings. Admins can easily review, update, or delete data, ensuring that the platform remains organized and efficient.",
-        github: "https://github.com/mohdrafey1/studentsenior-frontend",
-        demo: "https://panel.studentsenior.com",
-        tech: "HTML, Bootstrap, Express",
-        color: "blue",
+            "Developed a highly optimized admin dashboard for Student Senior using Next.js and Redux. Implemented server-side rendering (SSR) for faster performance and SEO benefits. Integrated role-based authentication to securely manage access for admins, mentors, and students.",
+        github: "https://github.com/mohdrafey1/studentsenior-dashboard",
+        demo: "https://dashboard.studentsenior.com",
+        tech: "Next.js, Tailwind CSS, Redux, Vercel Deployment",
+        color: "purple",
         category: "Dashboard",
     },
     {
         id: 3,
+        images: [
+            placeholderImages.ssb1,
+            placeholderImages.ssb2,
+            placeholderImages.ssb3,
+            placeholderImages.ssb4,
+        ],
+        title: "Student Senior Backend",
+        description:
+            "Designed and developed the backend infrastructure for Student Senior, managing a large codebase for robust performance. Built RESTful APIs with Express.js, integrated server-side rendering with EJS, implemented AWS S3 presigned URLs for secure file uploads, rate limiting for API protection, and AWS CloudFront for optimized content delivery.",
+        github: "https://github.com/mohdrafey1/studentsenior-backend",
+        demo: "https://panel.studentsenior.com",
+        tech: "Express.js, EJS, AWS S3, AWS CloudFront, MongoDB",
+        color: "blue",
+        category: "Dashboard",
+    },
+    {
+        id: 4,
         images: [
             placeholderImages.exploreheaven1,
             placeholderImages.exploreheaven2,
@@ -108,15 +125,15 @@ const projectData = [
         ],
         title: "Explore Heaven",
         description:
-            "Explore Heaven is a web application designed to provide users with a platform to explore and discover heavenly destinations around the world. Users can browse through a list of heavenly listings, view details of each listing, and even contribute their own listings.",
+            "Explore Heaven is a travel platform that allows users to discover and share heavenly destinations worldwide. Users can browse listings, view detailed information, and contribute their own entries to the platform.",
         github: "https://github.com/mohdrafey1/Explore-Heaven",
         demo: "https://explore-heaven.onrender.com/listings",
-        tech: "HTML, CSS, Javascript, EJS, NodeJs, PassportJs, Bootstrap, ExpressJs, Mongodb, cloudinary, Render",
+        tech: "Node.js, Express.js, MongoDB, EJS, Cloudinary, Bootstrap, Render",
         color: "teal",
         category: "Travel",
     },
     {
-        id: 4,
+        id: 5,
         images: [
             placeholderImages.grocery1,
             placeholderImages.grocery2,
@@ -125,15 +142,15 @@ const projectData = [
         ],
         title: "Extra Grocery Mart",
         description:
-            "This project is a React-based e-commerce website built with React and Material-UI (MUI). It features a responsive navbar, product listings, and a modal for product details. The site allows users to browse products, view details.",
+            "A responsive e-commerce platform built with React and Material-UI (MUI), featuring product listings, a dynamic product detail modal, and a seamless shopping experience for users.",
         github: "https://github.com/mohdrafey1/Extra-Grocery-Mart",
         demo: "https://extra-grocery-mart.vercel.app/",
-        tech: "Javascript, React, React Modal, Material Ui",
+        tech: "React, Material-UI, React Modal",
         color: "green",
         category: "E-commerce",
     },
     {
-        id: 5,
+        id: 6,
         images: [
             placeholderImages.learning1,
             placeholderImages.learning2,
@@ -142,29 +159,12 @@ const projectData = [
         ],
         title: "Learning Blog",
         description:
-            "This project is a full-stack web application built with React for the frontend and Appwrite for the backend. The application allows users to create, read, update, and delete posts. Authentication is handled using Appwrite, and the project is styled using Tailwind CSS. Additionally, it includes TinyMCE for rich text editing.",
+            "A full-stack blogging platform where users can create, edit, and delete posts. Built with React and Tailwind CSS for the frontend and Appwrite for backend services. Integrated TinyMCE for rich text editing and implemented authentication using Appwrite services.",
         github: "https://github.com/mohdrafey1/Learning-blog",
         demo: "https://good-learning.vercel.app/",
-        tech: "React, Tailwind, Redux, Appwrite, TinyMice, React-Hook-Form",
-        color: "purple",
-        category: "Blog",
-    },
-    {
-        id: 6,
-        images: [
-            placeholderImages.moviesearch1,
-            placeholderImages.moviesearch2,
-            placeholderImages.moviesearch3,
-            placeholderImages.moviesearch4,
-        ],
-        title: "Movie Search App",
-        description:
-            "This project is a React-based application that allows users to search for movies using the OMDb API. It includes components for displaying a list of movies, detailed movie information, and a search form for fetching movies by title.",
-        github: "https://github.com/mohdrafey1/movie-search-app",
-        demo: "https://movie-search-app-ruddy-one.vercel.app/",
-        tech: "HTML, CSS, Javascript, React, React Modal, Axios",
+        tech: "React, Tailwind CSS, Redux, Appwrite, TinyMCE, React Hook Form",
         color: "red",
-        category: "Entertainment",
+        category: "Blog",
     },
 ];
 
