@@ -127,7 +127,7 @@ export default function About() {
                         </div>
 
                         {/* Skill progress bars */}
-                        <div
+                        {/* <div
                             ref={progressRef}
                             className="w-full max-w-md space-y-6 px-2"
                         >
@@ -154,7 +154,7 @@ export default function About() {
                                     </div>
                                 </div>
                             ))}
-                        </div>
+                        </div> */}
                     </div>
 
                     {/* Right column - About content */}
