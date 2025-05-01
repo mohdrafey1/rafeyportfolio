@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Menu, X, Sun, Moon, FileText } from "lucide-react";
 import { usePreference } from "../../PreferenceContext";
+import { SHOW_OLD_UI_BUTTON } from "../../constant";
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -151,23 +152,25 @@ export default function Header() {
                     </ul>
 
                     {/* UI Toggle Switch */}
-                    <div className="flex items-center space-x-2">
-                        <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
-                            New UI
-                        </span>
-                        <label className="relative inline-flex items-center cursor-pointer">
-                            <input
-                                type="checkbox"
-                                checked={isOldUI}
-                                onChange={() => setIsOldUI(!isOldUI)}
-                                className="sr-only peer"
-                            />
-                            <div className="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-gradient-to-r peer-checked:from-pink-600 peer-checked:to-indigo-600 dark:peer-checked:from-pink-500 dark:peer-checked:to-indigo-500"></div>
-                        </label>
-                        <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
-                            Old UI
-                        </span>
-                    </div>
+                    {SHOW_OLD_UI_BUTTON && (
+                        <div className="flex items-center space-x-2">
+                            <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
+                                New UI
+                            </span>
+                            <label className="relative inline-flex items-center cursor-pointer">
+                                <input
+                                    type="checkbox"
+                                    checked={isOldUI}
+                                    onChange={() => setIsOldUI(!isOldUI)}
+                                    className="sr-only peer"
+                                />
+                                <div className="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-gradient-to-r peer-checked:from-pink-600 peer-checked:to-indigo-600 dark:peer-checked:from-pink-500 dark:peer-checked:to-indigo-500"></div>
+                            </label>
+                            <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
+                                Old UI
+                            </span>
+                        </div>
+                    )}
 
                     {/* Enhanced Theme Toggle */}
                     <button
@@ -319,23 +322,25 @@ export default function Header() {
                 </div>
 
                 {/* Mobile UI Toggle Switch */}
-                <div className="mt-8 px-4 flex items-center justify-center space-x-3">
-                    <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
-                        New UI
-                    </span>
-                    <label className="relative inline-flex items-center cursor-pointer">
-                        <input
-                            type="checkbox"
-                            checked={isOldUI}
-                            onChange={() => setIsOldUI(!isOldUI)}
-                            className="sr-only peer"
-                        />
-                        <div className="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-gradient-to-r peer-checked:from-pink-600 peer-checked:to-indigo-600 dark:peer-checked:from-pink-500 dark:peer-checked:to-indigo-500"></div>
-                    </label>
-                    <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
-                        Old UI
-                    </span>
-                </div>
+                {SHOW_OLD_UI_BUTTON && (
+                    <div className="mt-8 px-4 flex items-center justify-center space-x-3">
+                        <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
+                            New UI
+                        </span>
+                        <label className="relative inline-flex items-center cursor-pointer">
+                            <input
+                                type="checkbox"
+                                checked={isOldUI}
+                                onChange={() => setIsOldUI(!isOldUI)}
+                                className="sr-only peer"
+                            />
+                            <div className="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-gradient-to-r peer-checked:from-pink-600 peer-checked:to-indigo-600 dark:peer-checked:from-pink-500 dark:peer-checked:to-indigo-500"></div>
+                        </label>
+                        <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
+                            Old UI
+                        </span>
+                    </div>
+                )}
             </div>
         </>
     );
