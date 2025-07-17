@@ -1,4 +1,3 @@
-import React from "react";
 import { Linkedin, Github, Heart, Mail, ArrowUp } from "lucide-react";
 import BubbleAnimation from "../UI/BubbleAnimation";
 
@@ -45,7 +44,7 @@ export default function Footer() {
                         </p>
                     </div>
 
-                    <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+                    <div className="flex flex-wrap justify-center gap-4 md:gap-6 z-50">
                         <a
                             href="#about"
                             className="text-gray-300 hover:text-white transition-colors duration-300"
@@ -86,7 +85,7 @@ export default function Footer() {
                         </span>
                     </div>
 
-                    <div className="flex items-center space-x-4">
+                    <div className="flex items-center space-x-4 z-50">
                         <a
                             aria-label="Email"
                             href="mailto:mohdrafey600@gmail.com"

@@ -1,4 +1,3 @@
-import React from "react";
 import { PreferenceProvider, usePreference } from "./PreferenceContext";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
