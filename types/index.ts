@@ -43,6 +43,7 @@ export interface Education {
     degree: string;
     institution: string;
     year: string;
+    location?: string;
 }
 
 export interface Social {

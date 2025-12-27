@@ -3,70 +3,220 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight, Mail, Sparkles } from "lucide-react";
+import { AnimatedBackground } from "@/components/ui/AnimatedBackground";
+import { Typewriter } from "@/components/ui/Typewriter";
+import Image from "next/image";
 
 export function Hero() {
     return (
         <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-background">
-            {/* Background Effects */}
+            {/* Animated Background */}
+            <AnimatedBackground />
+
+            {/* Radial gradient overlay */}
             <div className="absolute inset-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-background to-background opacity-50 z-0" />
-            <div className="absolute top-0 left-0 w-full h-full bg-[url('/noise.png')] opacity-5 mix-blend-overlay z-0 pointer-events-none" />
 
-            <div className="container relative z-10 px-6 text-center max-w-4xl mx-auto">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
+            <div className="container relative z-10 px-6 mx-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+                    {/* Left: Text Content */}
+                    <div className="text-center lg:text-left">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5 }}
+                        >
+                            <div className="inline-flex mt-4 lg:mt-0 items-center gap-2 px-4 py-2 text-sm font-medium rounded-full bg-primary/10 text-primary border border-primary/20 backdrop-blur-sm mb-6">
+                                <Sparkles className="w-4 h-4" />
+                                Available for Freelance Projects
+                            </div>
+                        </motion.div>
+
+                        <motion.h1
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.1 }}
+                            className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading tracking-tight text-foreground leading-tight mb-6"
+                        >
+                            Hi, I'm{" "}
+                            <span className="relative inline-block">
+                                <span className="gradient-text">
+                                    Mohd Rafey
+                                </span>
+                                <motion.div
+                                    className="absolute -inset-1 bg-gradient-to-r from-primary to-purple-500 rounded-lg blur opacity-20"
+                                    animate={{
+                                        opacity: [0.2, 0.4, 0.2],
+                                    }}
+                                    transition={{
+                                        duration: 3,
+                                        repeat: Infinity,
+                                        ease: "easeInOut",
+                                    }}
+                                />
+                            </span>
+                        </motion.h1>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                            className="text-2xl md:text-3xl lg:text-4xl font-bold font-heading text-foreground mb-6"
+                        >
+                            I build{" "}
+                            <Typewriter
+                                texts={[
+                                    "scalable products.",
+                                    "stunning interfaces.",
+                                    "powerful backends.",
+                                    "amazing experiences.",
+                                ]}
+                                className="gradient-text"
+                            />
+                        </motion.div>
+
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.3 }}
+                            className="text-base md:text-lg text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0"
+                        >
+                            A Full Stack Software Engineer bridging the gap
+                            between bold ideas and production-ready
+                            applications. Specializing in the MERN stack and
+                            Next.js.
+                        </motion.p>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.4 }}
+                            className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
+                        >
+                            <Button
+                                size="lg"
+                                className="group relative overflow-hidden shadow-lg shadow-primary/25 hover:shadow-primary/50 transition-all duration-300"
+                                asChild
+                            >
+                                <Link href="#projects">
+                                    <span className="relative z-10 flex items-center">
+                                        View Work
+                                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                                    </span>
+                                    <motion.div
+                                        className="absolute inset-0 bg-gradient-to-r from-primary to-purple-500"
+                                        initial={{ x: "-100%" }}
+                                        whileHover={{ x: 0 }}
+                                        transition={{ duration: 0.3 }}
+                                    />
+                                </Link>
+                            </Button>
+                            <Button
+                                size="lg"
+                                variant="outline"
+                                className="group border-2 hover:border-primary transition-all duration-300"
+                                asChild
+                            >
+                                <Link href="#contact">
+                                    Contact Me
+                                    <Mail className="ml-2 h-4 w-4 group-hover:scale-110 transition-transform" />
+                                </Link>
+                            </Button>
+                        </motion.div>
+                    </div>
+
+                    {/* Right: Animated Profile/Visual */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                        className="relative flex justify-center lg:justify-end"
+                    >
+                        <div className="relative">
+                            {/* Rotating gradient ring */}
+                            <motion.div
+                                className="absolute inset-0 rounded-full"
+                                style={{
+                                    background:
+                                        "conic-gradient(from 0deg, #3b82f6, #8b5cf6, #ec4899, #3b82f6)",
+                                    padding: "4px",
+                                }}
+                                animate={{ rotate: 360 }}
+                                transition={{
+                                    duration: 8,
+                                    repeat: Infinity,
+                                    ease: "linear",
+                                }}
+                            >
+                                <div className="w-full h-full rounded-full bg-background" />
+                            </motion.div>
+
+                            {/* Profile image */}
+                            <motion.div
+                                className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-background z-10"
+                                whileHover={{ scale: 1.05 }}
+                                transition={{ type: "spring", stiffness: 300 }}
+                            >
+                                <Image
+                                    src="/pic.jpg"
+                                    alt="Mohd Rafey"
+                                    fill
+                                    className="object-cover"
+                                    priority
+                                />
+                            </motion.div>
+
+                            {/* Floating particles */}
+                            <motion.div
+                                className="absolute top-10 -right-10 w-20 h-20 bg-primary/20 rounded-full blur-xl"
+                                animate={{
+                                    y: [0, -20, 0],
+                                    x: [0, 10, 0],
+                                }}
+                                transition={{
+                                    duration: 4,
+                                    repeat: Infinity,
+                                    ease: "easeInOut",
+                                }}
+                            />
+                            <motion.div
+                                className="absolute bottom-10 -left-10 w-16 h-16 bg-purple-500/20 rounded-full blur-xl"
+                                animate={{
+                                    y: [0, 20, 0],
+                                    x: [0, -10, 0],
+                                }}
+                                transition={{
+                                    duration: 5,
+                                    repeat: Infinity,
+                                    ease: "easeInOut",
+                                }}
+                            />
+                        </div>
+                    </motion.div>
+                </div>
+
+                {/* Scroll indicator */}
+                {/* <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1, duration: 0.5 }}
+                    className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
                 >
-                    <span className="px-3 py-1 text-sm font-medium rounded-full bg-primary/10 text-primary border border-primary/20 backdrop-blur-sm">
-                        Available for Freelance Projects
+                    <span className="text-xs text-muted-foreground">
+                        Scroll to explore
                     </span>
-                </motion.div>
-
-                <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className="mt-6 text-5xl md:text-7xl font-bold font-heading tracking-tight text-foreground leading-tight"
-                >
-                    Hi, I'm <span className="text-primary">Mohd Rafey</span>.{" "}
-                    <br />
-                    I build scalable products, <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">
-                        not just websites.
-                    </span>
-                </motion.h1>
-
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                    className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto"
-                >
-                    A Full Stack Software Engineer bridging the gap between bold
-                    ideas and production-ready applications. Specializing in the
-                    MERN stack and Next.js.
-                </motion.p>
-
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.6 }}
-                    className="mt-10 flex flex-col md:flex-row items-center justify-center gap-4"
-                >
-                    <Button size="lg" className="group" asChild>
-                        <Link href="#projects">
-                            View Work
-                            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                        </Link>
-                    </Button>
-                    <Button size="lg" variant="outline" asChild>
-                        <Link href="#contact">
-                            Contact Me
-                            <Mail className="ml-2 h-4 w-4" />
-                        </Link>
-                    </Button>
-                </motion.div>
+                    <motion.div
+                        animate={{ y: [0, 8, 0] }}
+                        transition={{ duration: 1.5, repeat: Infinity }}
+                        className="w-6 h-10 border-2 border-primary/50 rounded-full p-1"
+                    >
+                        <motion.div
+                            animate={{ y: [0, 12, 0] }}
+                            transition={{ duration: 1.5, repeat: Infinity }}
+                            className="w-1 h-2 bg-primary rounded-full mx-auto"
+                        />
+                    </motion.div>
+                </motion.div> */}
             </div>
         </section>
     );

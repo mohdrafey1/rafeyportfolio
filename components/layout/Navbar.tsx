@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -78,6 +79,7 @@ export function Navbar() {
                             )}
                         </Link>
                     ))}
+                    <ThemeToggle />
                     <Button variant="ghost" size="sm" asChild>
                         <Link
                             href="https://drive.google.com/file/d/1frVELJnoDmN6nY9p1CeqQFV0tMFoP8nr/view?usp=sharing"
@@ -125,13 +127,16 @@ export function Navbar() {
                                     {link.name}
                                 </Link>
                             ))}
-                            <Button
-                                className="w-full mt-2"
-                                onClick={() => setIsOpen(false)}
-                                asChild
-                            >
-                                <Link href="#contact">Hire Me</Link>
-                            </Button>
+                            <div className="flex items-center gap-2 mt-4 pt-4 border-t border-border">
+                                <ThemeToggle className="flex-1" />
+                                <Button
+                                    className="flex-1"
+                                    onClick={() => setIsOpen(false)}
+                                    asChild
+                                >
+                                    <Link href="#contact">Hire Me</Link>
+                                </Button>
+                            </div>
                         </div>
                     </motion.div>
                 )}
