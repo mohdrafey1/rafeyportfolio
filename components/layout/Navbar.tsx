@@ -128,10 +128,24 @@ export function Navbar() {
                                     {link.name}
                                 </Link>
                             ))}
-                            <div className="flex items-center gap-2 mt-4 pt-4 border-t border-border">
-                                <ThemeToggle className="flex-1" />
+                            <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-border">
+                                <div className="flex gap-3">
+                                    <ThemeToggle className="flex-none" />
+                                    <Button
+                                        variant="outline"
+                                        className="flex-1 border-primary text-primary hover:bg-primary/10"
+                                        asChild
+                                    >
+                                        <Link
+                                            href="https://drive.google.com/file/d/1frVELJnoDmN6nY9p1CeqQFV0tMFoP8nr/view?usp=sharing"
+                                            target="_blank"
+                                        >
+                                            Resume
+                                        </Link>
+                                    </Button>
+                                </div>
                                 <Button
-                                    className="flex-1"
+                                    className="w-full"
                                     onClick={() => setIsOpen(false)}
                                     asChild
                                 >
