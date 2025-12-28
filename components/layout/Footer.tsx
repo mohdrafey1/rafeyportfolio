@@ -59,7 +59,7 @@ export function Footer() {
                                     href={social.href}
                                     target="_blank"
                                     aria-label={social.label}
-                                    className="group relative p-3 rounded-full bg-secondary/50 border border-border hover:border-primary/50 transition-all duration-300"
+                                    className=""
                                 >
                                     <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
                                     <motion.div

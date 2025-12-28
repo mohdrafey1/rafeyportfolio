@@ -58,59 +58,36 @@ export function About() {
                 >
                     {/* Left Text */}
                     <div>
-                        <motion.div
-                            initial={{ scale: 0 }}
-                            whileInView={{ scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5 }}
-                            className="inline-block mb-4"
-                        >
-                            <span className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full bg-primary/10 text-primary border border-primary/20">
-                                <User className="w-4 h-4" />
-                                Get To Know Me
-                            </span>
-                        </motion.div>
+                        <span className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full bg-primary/10 text-primary border border-primary/20">
+                            <User className="w-4 h-4" />
+                            Get To Know Me
+                        </span>
 
                         <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
                             About <span className="gradient-text">Me</span>
                         </h2>
                         <div className="space-y-4 text-muted-foreground text-base md:text-lg">
-                            <motion.p
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.2 }}
-                            >
+                            <p>
                                 I'm a Full Stack Software Engineer and Computer
                                 Science student who builds scalable,
                                 production-ready products from scratch. I focus
                                 on clean architecture, automation, performance,
                                 and developer experience.
-                            </motion.p>
-                            <motion.p
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.3 }}
-                            >
+                            </p>
+                            <p>
                                 I've independently developed and scaled
                                 platforms used by thousands of users, handling
                                 everything from system design and backend
                                 architecture to frontend performance and SEO.
-                            </motion.p>
-                            <motion.p
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.4 }}
-                            >
+                            </p>
+                            <p>
                                 I believe good products are built with{" "}
                                 <strong className="text-foreground">
                                     clarity, strong logic, and attention to
                                     real-world problems
                                 </strong>
                                 —not just flashy UI.
-                            </motion.p>
+                            </p>
                         </div>
 
                         <div className="mt-8 grid grid-cols-3 gap-6">

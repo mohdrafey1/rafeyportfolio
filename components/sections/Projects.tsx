@@ -22,17 +22,11 @@ export function Projects() {
                     transition={{ duration: 0.5 }}
                     className="text-center mb-16"
                 >
-                    <motion.div
-                        initial={{ scale: 0 }}
-                        whileInView={{ scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
-                        className="inline-block mb-4"
-                    >
+                    <div className="inline-block mb-4">
                         <span className="px-4 py-2 text-sm font-medium rounded-full bg-primary/10 text-primary border border-primary/20">
                             My Work
                         </span>
-                    </motion.div>
+                    </div>
                     <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
                         Featured <span className="gradient-text">Projects</span>
                     </h2>

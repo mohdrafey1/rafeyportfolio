@@ -110,30 +110,13 @@ export function Skills() {
                                             (skill) =>
                                                 skill.category === category
                                         )
-                                        .map((skill, i) => (
-                                            <motion.div
+                                        .map((skill) => (
+                                            <div
                                                 key={skill.name}
-                                                initial={{
-                                                    opacity: 0,
-                                                    scale: 0,
-                                                }}
-                                                whileInView={{
-                                                    opacity: 1,
-                                                    scale: 1,
-                                                }}
-                                                viewport={{ once: true }}
-                                                transition={{
-                                                    delay:
-                                                        index * 0.1 + i * 0.05,
-                                                }}
-                                                whileHover={{
-                                                    scale: 1.1,
-                                                    y: -2,
-                                                }}
                                                 className="px-3 py-1.5 text-sm font-medium rounded-lg bg-secondary/80 text-secondary-foreground border border-transparent hover:border-primary/30 hover:bg-primary/10 hover:text-primary transition-all cursor-default backdrop-blur-sm"
                                             >
                                                 {skill.name}
-                                            </motion.div>
+                                            </div>
                                         ))}
                                 </div>
 

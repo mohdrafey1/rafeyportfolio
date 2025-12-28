@@ -84,6 +84,7 @@ export function Navbar() {
                         <Link
                             href="https://drive.google.com/file/d/1frVELJnoDmN6nY9p1CeqQFV0tMFoP8nr/view?usp=sharing"
                             target="_blank"
+                            className="border border-primary"
                         >
                             Resume
                         </Link>
