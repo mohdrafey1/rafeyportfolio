@@ -82,7 +82,7 @@ export function Navbar() {
                     <ThemeToggle />
                     <Button variant="ghost" size="sm" asChild>
                         <Link
-                            href="https://drive.google.com/file/d/1frVELJnoDmN6nY9p1CeqQFV0tMFoP8nr/view?usp=sharing"
+                            href="https://drive.google.com/file/d/1OeY0cTxsZmC86J61MvLGxRnoUhLEArUS/view?usp=sharing"
                             target="_blank"
                             className="border border-primary"
                         >
@@ -137,7 +137,7 @@ export function Navbar() {
                                         asChild
                                     >
                                         <Link
-                                            href="https://drive.google.com/file/d/1frVELJnoDmN6nY9p1CeqQFV0tMFoP8nr/view?usp=sharing"
+                                            href="https://drive.google.com/file/d/1OeY0cTxsZmC86J61MvLGxRnoUhLEArUS/view?usp=sharing"
                                             target="_blank"
                                         >
                                             Resume
