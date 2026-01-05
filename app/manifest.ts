@@ -3,7 +3,7 @@ import { MetadataRoute } from "next";
 export default function manifest(): MetadataRoute.Manifest {
     return {
         name: "Mohd Rafey - Full Stack Developer",
-        short_name: "Rafey.space",
+        short_name: "Mohd Rafey",
         description: "Portfolio of a creative full stack developer.",
         start_url: "/",
         display: "standalone",
