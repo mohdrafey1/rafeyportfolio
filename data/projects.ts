@@ -12,6 +12,8 @@ export const projects: Project[] = [
         techStack: ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB"],
         features: [
             "Create debates with categories & subcategories",
+            "Integrated ai for faster debate generation",
+            "Debate and pending by Ai reducing admin work 90%",
             "Multiple options per debate (users can add options)",
             "Anonymous voting with IP-based anti-abuse system",
             "Browser fingerprinting & Client-side vote memory",
@@ -20,7 +22,7 @@ export const projects: Project[] = [
         ],
         liveLink: "https://letsettle.rafey.space",
         githubLink: "https://github.com/mohdrafey1/Letsettle",
-        image: "/projectimages/letsettle.png", // specific path to be added later
+        image: "/projectimages/letsettle.png",
         featured: true,
         projectType: "Personal",
         storybehindproject: `I’ve always been curious about one simple question:
@@ -181,6 +183,7 @@ it’s where I learned how to think like an engineer.`,
             "Auto-summary of blogs using AI",
             "Integrated Admin Dashboard",
             "High organic search traffic performance",
+             "Ai Based Admin dashboard",
         ],
         liveLink: "https://blog.studentsenior.com/",
         githubLink: "https://github.com/mohdrafey1/studentsenior-blog",
@@ -202,10 +205,9 @@ it’s where I learned how to think like an engineer.`,
             "Admin broadcast to 1000+ users in one click",
             "OTP-based phone login",
             "Push notifications",
-            "Status / stories with 24-hour expiry",
-            "Seeded admin with extra privileges",
+            "Admin with extra privileges",
         ],
-        // No live link provided for app, using placeholder or omitting
+        // No live link provided for app
         featured: true,
         projectType: "Client",
     },
