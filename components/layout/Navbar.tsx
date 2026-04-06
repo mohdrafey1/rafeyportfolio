@@ -29,7 +29,7 @@ export function Navbar() {
                     }
                 });
             },
-            { threshold: 0.5 }
+            { threshold: 0.5 },
         );
 
         navLinks.forEach((link) => {
@@ -62,7 +62,7 @@ export function Navbar() {
                                 "text-sm font-medium transition-colors relative",
                                 activeSection === link.href.substring(1)
                                     ? "text-primary"
-                                    : "text-muted-foreground hover:text-primary"
+                                    : "text-muted-foreground hover:text-primary",
                             )}
                         >
                             {link.name}
@@ -82,7 +82,7 @@ export function Navbar() {
                     <ThemeToggle />
                     <Button variant="ghost" size="sm" asChild>
                         <Link
-                            href="https://drive.google.com/file/d/1OeY0cTxsZmC86J61MvLGxRnoUhLEArUS/view?usp=sharing"
+                            href="https://drive.google.com/file/d/1ctgIp9_HTFETdnmvmPnWWllZ0pxC7cnY/view?usp=sharing"
                             target="_blank"
                             className="border border-primary"
                         >
@@ -121,7 +121,7 @@ export function Navbar() {
                                         "text-lg font-medium transition-colors",
                                         activeSection === link.href.substring(1)
                                             ? "text-primary"
-                                            : "text-foreground hover:text-primary"
+                                            : "text-foreground hover:text-primary",
                                     )}
                                     onClick={() => setIsOpen(false)}
                                 >
@@ -137,7 +137,7 @@ export function Navbar() {
                                         asChild
                                     >
                                         <Link
-                                            href="https://drive.google.com/file/d/1OeY0cTxsZmC86J61MvLGxRnoUhLEArUS/view?usp=sharing"
+                                            href="https://drive.google.com/file/d/1ctgIp9_HTFETdnmvmPnWWllZ0pxC7cnY/view?usp=sharing"
                                             target="_blank"
                                         >
                                             Resume

@@ -20,7 +20,7 @@ function Counter({ end, duration = 2 }: { end: number; duration?: number }) {
             if (!startTime) startTime = currentTime;
             const progress = Math.min(
                 (currentTime - startTime) / (duration * 1000),
-                1
+                1,
             );
 
             setCount(Math.floor(progress * end));
@@ -94,19 +94,19 @@ export function About() {
                             {[
                                 {
                                     icon: Target,
-                                    value: 100,
-                                    suffix: "k+",
+                                    value: 5,
+                                    suffix: "M+",
                                     label: "Lines Code Written",
                                 },
                                 {
                                     icon: User,
-                                    value: 10,
+                                    value: 25,
                                     suffix: "k+",
                                     label: "Users Served",
                                 },
                                 {
                                     icon: Rocket,
-                                    value: 5,
+                                    value: 10,
                                     suffix: "+",
                                     label: "Projects Delivered",
                                 },
