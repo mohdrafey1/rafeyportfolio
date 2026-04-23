@@ -332,6 +332,68 @@ Turning endless arguments into clear outcomes.`,
 
     {
         id: "7",
+        title: "Kulaswamini",
+        slug: "kulaswamini",
+        description:
+            "A comprehensive educational platform featuring course management, PYQs, secure payments, and live class integration.",
+        longDescription:
+            "A robust full-stack e-learning platform developed to facilitate seamless education delivery. It features dedicated student and admin dashboards, integrated live class access via a secure Zoom gateway, automated email OTP verification for secure signups, and international payment processing through PayPal for courses, PYQs, and notes.",
+        techStack: [
+            "Next.js",
+            "Node.js",
+            "Express.js",
+            "PostgreSQL",
+            "Prisma",
+            "Tailwind CSS",
+            "Redis",
+        ],
+        features: [
+            "Secure Zoom Gateway Integration",
+            "International Payments via PayPal",
+            "Automated Email OTP & Purchase Receipts",
+            "Admin & Student Dashboards",
+            "Course, Notes & PYQ Management",
+            "Dynamic Coupon Management System",
+        ],
+        liveLink: "https://kulaswamini.com",
+        image: "/projectimages/kulaswamini.png",
+        featured: true,
+        projectType: "Client",
+    },
+
+    {
+        id: "8",
+        title: "Farhan Shoe Center",
+        slug: "fsc",
+        description:
+            "A modern e-commerce platform and PWA for a premium footwear collection.",
+        longDescription:
+            "Farhan Shoe Center (FSC) is a comprehensive e-commerce solution featuring a Next.js Progressive Web App (PWA) for a seamless, app-like mobile experience. It includes a dedicated React/Vite admin dashboard for efficiently managing products, categories, and viewing store statistics. The backend is powered by Node.js, Express, and MongoDB, utilizing Cloudinary for optimized image hosting and JWT for secure authentication.",
+        techStack: [
+            "Next.js",
+            "React",
+            "Tailwind CSS",
+            "Zustand",
+            "Node.js",
+            "Express",
+            "MongoDB",
+        ],
+        features: [
+            "Progressive Web App (PWA) support for mobile",
+            "Dynamic product catalog and category filtering",
+            "Shopping cart and state management with Zustand",
+            "Secure admin dashboard for inventory and stats",
+            "Cloudinary integration for image uploads",
+            "JWT-based secure authentication",
+        ],
+        liveLink: "https://farhanshoecenter.vercel.app/",
+        image: "/projectimages/farhanshoecenter.png",
+        featured: true,
+        projectType: "Client",
+    },
+
+    {
+        id: "9",
         title: "TravChat",
         slug: "travchat",
         description:
@@ -347,12 +409,13 @@ Turning endless arguments into clear outcomes.`,
             "Admin with extra privileges",
         ],
         // No live link provided for app
+        image: "/projectimages/travchat.png",
         featured: true,
         projectType: "Client",
     },
 
     {
-        id: "8",
+        id: "10",
         title: "Alresala Tailoring",
         slug: "alresala",
         description:
@@ -376,6 +439,7 @@ Turning endless arguments into clear outcomes.`,
             "Dynamic total calculations",
         ],
         // Client project, may not have public link
+        image: "/projectimages/alresala.png",
         featured: true,
         projectType: "Client",
     },
