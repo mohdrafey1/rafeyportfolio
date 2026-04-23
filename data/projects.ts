@@ -96,7 +96,7 @@ it's the ecosystem where I learned how to think like an engineer.`,
         description:
             "A mind-bending open-source puzzle game with infinite levels, a level editor, and community sharing — built with React Native & Expo.",
         longDescription:
-            "Puzzle Arrow is a fun, addictive open-source puzzle game where players guide arrows to the right spots. It combines a built-in campaign of carefully crafted levels with an endless stream of community-created puzzles. Players can design and publish their own brain teasers using the built-in Level Editor, unlock cosmetic rewards like arrow colors, themes, and confetti, and enjoy fully offline gameplay. The app hit 1,000+ downloads in just 10 days after launch.",
+            "Puzzle Arrow is a fun, addictive open-source puzzle game where players guide arrows to the right spots. It combines a built-in campaign of carefully crafted levels with an endless stream of community-created puzzles. Players can design and publish their own brain teasers using the built-in Level Editor, unlock cosmetic rewards like arrow colors, themes, and confetti, and enjoy fully offline gameplay. The app hit 4K+ downloads.",
         techStack: [
             "React Native",
             "Expo",
@@ -109,7 +109,7 @@ it's the ecosystem where I learned how to think like an engineer.`,
             "Level Editor — design & publish your own brain teasers",
             "Customizations — unlock arrow colors, themes, and confetti",
             "Offline Mode — play seamlessly without internet",
-            "1,000+ downloads in the first 10 days",
+            "4k+ downloads",
         ],
         liveLink: "https://puzzlearrow.rafey.space",
         githubLink: "https://github.com/mohdrafey1/puzzle-arrow",
@@ -124,13 +124,59 @@ What really made this project exciting was building the Level Editor. I wanted p
 
 I also built an offline-first architecture so the game works without internet, which was crucial for a casual game that people play during commutes or dead zones.
 
-The response was unexpected. 1,000+ downloads in just 10 days after publishing to the Play Store. Seeing people actually playing levels they discovered from other players was genuinely exciting.
+The response was unexpected. 4K+ downloads after publishing to the Play Store. Seeing people actually playing levels they discovered from other players was genuinely exciting.
 
 It reminded me why I got into building things in the first place — not for metrics, but for the moment someone says "okay one more level."`,
     },
 
     {
         id: "3",
+        title: "Quiz Arena",
+        slug: "quiz-arena",
+        description:
+            "A Real-Time Quiz Platform with Earnings, AI & Competition.",
+        longDescription:
+            "Quiz Arena is a platform where learning meets competition and real earning opportunities. Users can host paid or free quizzes, and participants can win real money. It features a War Room for real-time battles with friends, AI-powered quiz generation on any topic, and a scalable architecture.",
+        techStack: [
+            "React.js",
+            "Next.js",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "Mongoose",
+            "Socket.io",
+            "Node Cron",
+            "OpenAI API",
+            "Nodemailer",
+            "GCP",
+            "Vercel",
+        ],
+        features: [
+            "Earn While You Learn — Host paid or free quizzes with automated prize distribution",
+            "War Room (Real-Time Battles) — Create public/private rooms and battle live",
+            "AI-Powered Quiz Generation — Instantly generate quizzes on any topic",
+            "Scalable Architecture — 3-layer scalable architecture deployed on GCP & Vercel",
+        ],
+        liveLink: "https://quizarena.in",
+        githubLink: "https://github.com/quizarenastar/quiz-arena-frontend",
+        image: "/projectimages/quizarena.png",
+        featured: true,
+        projectType: "Personal",
+        storybehindproject: `This started as a simple idea: What if quizzes were not just for practice, but also competitive, real-time, and rewarding?
+
+After weeks of development, Quiz Arena was born — a platform where learning meets competition and real earning opportunities.
+
+I wanted to create a platform where any user can host paid or free quizzes, and participants can earn real money and withdraw it. We implemented a fully automated prize distribution system: 50% to winners, 30% to the quiz creator, and 20% to the platform.
+
+To make it even more engaging, I built a 'War Room' feature where users can create public or private rooms, invite friends, and battle live.
+
+And for those who want to host but don't have questions ready, we integrated AI-powered quiz generation that instantly generates quizzes on any topic.
+
+The platform is built with scalability in mind, using a 3-layer architecture deployed on GCP and Vercel.`,
+    },
+
+    {
+        id: "4",
         title: "Roomio",
         slug: "roomio",
         description:
@@ -176,7 +222,7 @@ Roomio is the kind of app I wished existed before I built it. That's usually the
     },
 
     {
-        id: "4",
+        id: "5",
         title: "Letsettle",
         slug: "letsettle",
         description:
@@ -262,7 +308,7 @@ Turning endless arguments into clear outcomes.`,
     },
 
     {
-        id: "5",
+        id: "6",
         title: "StudentSenior Blog",
         slug: "studentsenior-blog",
         description:
@@ -285,7 +331,7 @@ Turning endless arguments into clear outcomes.`,
     },
 
     {
-        id: "6",
+        id: "7",
         title: "TravChat",
         slug: "travchat",
         description:
@@ -306,7 +352,7 @@ Turning endless arguments into clear outcomes.`,
     },
 
     {
-        id: "7",
+        id: "8",
         title: "Alresala Tailoring",
         slug: "alresala",
         description:
