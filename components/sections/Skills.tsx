@@ -108,7 +108,7 @@ export function Skills() {
                                     {skills
                                         .filter(
                                             (skill) =>
-                                                skill.category === category
+                                                skill.category === category,
                                         )
                                         .map((skill) => (
                                             <div

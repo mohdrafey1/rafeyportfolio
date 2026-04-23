@@ -243,7 +243,7 @@ Roomio is the kind of app I wished existed before I built it. That's usually the
         liveLink: "https://letsettle.rafey.space",
         githubLink: "https://github.com/mohdrafey1/Letsettle",
         image: "/projectimages/letsettle.png",
-        featured: true,
+        featured: false,
         projectType: "Personal",
         storybehindproject: `I've always been curious about one simple question:
 
@@ -326,7 +326,7 @@ Turning endless arguments into clear outcomes.`,
         liveLink: "https://blog.studentsenior.com/",
         githubLink: "https://github.com/mohdrafey1/studentsenior-blog",
         image: "/projectimages/blog.png",
-        featured: true,
+        featured: false,
         projectType: "Personal",
     },
 
@@ -410,7 +410,7 @@ Turning endless arguments into clear outcomes.`,
         ],
         // No live link provided for app
         image: "/projectimages/travchat.png",
-        featured: true,
+        featured: false,
         projectType: "Client",
     },
 
@@ -440,7 +440,7 @@ Turning endless arguments into clear outcomes.`,
         ],
         // Client project, may not have public link
         image: "/projectimages/alresala.png",
-        featured: true,
+        featured: false,
         projectType: "Client",
     },
 ];

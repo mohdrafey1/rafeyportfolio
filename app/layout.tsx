@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { MainWrapper } from "@/components/layout/MainWrapper";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { BackToTop } from "@/components/ui/BackToTop";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
@@ -44,12 +45,12 @@ export const metadata: Metadata = {
         "JavaScript",
         "MERN Stack",
         "Rafey Developer",
-        "Rafey",
         "Rafey Shaikh",
         "Mohd Rafey Shaikh",
         "Mohammad Rafey",
-        "Mohd Rafey 1",
-        "mohdrafey1",
+        "rafey.space",
+        "Rafey",
+        "Rafeyspace",
     ],
     authors: [{ name: "Mohd Rafey", url: siteUrl }],
     creator: "Mohd Rafey",
@@ -156,7 +157,7 @@ export default function RootLayout({
                 <ThemeProvider>
                     <ScrollProgress />
                     <Navbar />
-                    <main className="min-h-screen pt-16">{children}</main>
+                    <MainWrapper>{children}</MainWrapper>
                     <Footer />
                     <BackToTop />
                 </ThemeProvider>

@@ -3,9 +3,20 @@
 import Link from "next/link";
 import { Github, Linkedin, Twitter, Mail, Heart } from "lucide-react";
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
+
+const HIDDEN_PATHS = ["/projects", "/coding-activity"];
 
 export function Footer() {
     const currentYear = new Date().getFullYear();
+    const pathname = usePathname();
+
+    if (
+        HIDDEN_PATHS.includes(pathname) ||
+        HIDDEN_PATHS.some((p) => pathname.startsWith(p + "/"))
+    ) {
+        return null;
+    }
 
     const socialLinks = [
         {

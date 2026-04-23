@@ -63,13 +63,12 @@ export function About() {
                             Get To Know Me
                         </span>
 
-                        <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
+                        <h2 className="text-3xl md:text-4xl font-bold font-heading mt-6 mb-6">
                             About <span className="gradient-text">Me</span>
                         </h2>
                         <div className="space-y-4 text-muted-foreground text-base md:text-lg">
                             <p>
-                                I'm a Full Stack Software Engineer and Computer
-                                Science student who builds scalable,
+                                I'm a <strong className="text-foreground">Computer Science Engineering graduate</strong> and Full Stack Software Engineer who builds scalable,
                                 production-ready products from scratch. I focus
                                 on clean architecture, automation, performance,
                                 and developer experience.

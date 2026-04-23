@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -16,11 +17,21 @@ const navLinks = [
     { name: "Contact", href: "#contact" },
 ];
 
+const externalLinks = [{ name: "Coding Activity", href: "/coding-activity" }];
+
+const HIDDEN_PATHS = ["/projects", "/coding-activity"];
+
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [activeSection, setActiveSection] = useState("");
+    const pathname = usePathname();
+
+    const isHidden =
+        HIDDEN_PATHS.includes(pathname) ||
+        HIDDEN_PATHS.some((p) => pathname.startsWith(p + "/"));
 
     useEffect(() => {
+        if (isHidden) return;
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
@@ -40,7 +51,9 @@ export function Navbar() {
         });
 
         return () => observer.disconnect();
-    }, []);
+    }, [isHidden]);
+
+    if (isHidden) return null;
 
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border transition-all duration-300">
@@ -53,7 +66,7 @@ export function Navbar() {
                 </Link>
 
                 {/* Desktop Nav */}
-                <div className="hidden md:flex items-center gap-8">
+                <div className="hidden xl:flex items-center gap-8">
                     {navLinks.map((link) => (
                         <Link
                             key={link.name}
@@ -79,6 +92,15 @@ export function Navbar() {
                             )}
                         </Link>
                     ))}
+                    {externalLinks.map((link) => (
+                        <Link
+                            key={link.name}
+                            href={link.href}
+                            className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors px-2.5 py-1 rounded-full border border-border hover:border-primary/40"
+                        >
+                            {link.name}
+                        </Link>
+                    ))}
                     <ThemeToggle />
                     <Button variant="ghost" size="sm" asChild>
                         <Link
@@ -89,14 +111,14 @@ export function Navbar() {
                             Resume
                         </Link>
                     </Button>
-                    <Button variant="default" size="sm" asChild>
+                    {/* <Button variant="default" size="sm" asChild>
                         <Link href="#contact">Hire Me</Link>
-                    </Button>
+                    </Button> */}
                 </div>
 
                 {/* Mobile Toggle */}
                 <button
-                    className="md:hidden p-2 text-foreground"
+                    className="xl:hidden p-2 text-foreground"
                     onClick={() => setIsOpen(!isOpen)}
                 >
                     {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -110,7 +132,7 @@ export function Navbar() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-background border-b border-border overflow-hidden"
+                        className="xl:hidden bg-background border-b border-border overflow-hidden"
                     >
                         <div className="flex flex-col p-6 gap-4">
                             {navLinks.map((link) => (
@@ -123,6 +145,16 @@ export function Navbar() {
                                             ? "text-primary"
                                             : "text-foreground hover:text-primary",
                                     )}
+                                    onClick={() => setIsOpen(false)}
+                                >
+                                    {link.name}
+                                </Link>
+                            ))}
+                            {externalLinks.map((link) => (
+                                <Link
+                                    key={link.name}
+                                    href={link.href}
+                                    className="text-lg font-medium text-foreground hover:text-primary transition-colors"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     {link.name}
