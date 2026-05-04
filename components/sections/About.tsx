@@ -42,7 +42,7 @@ export function About() {
     return (
         <section
             id="about"
-            className="py-24 bg-muted/20 relative overflow-hidden"
+            className="py-24 bg-card relative overflow-hidden"
         >
             {/* Background gradients */}
             <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />

@@ -19,7 +19,7 @@ const typeStyles: Record<string, string> = {
 
 export function Experience() {
     return (
-        <section id="experience" className="py-24 bg-muted/20 relative overflow-hidden">
+        <section id="experience" className="py-24 bg-card relative overflow-hidden">
             {/* Background gradient orbs */}
             <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
             <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />

@@ -186,16 +186,13 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                     {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
-                    {project.techStack.map((tech, i) => (
-                        <motion.span
+                    {project.techStack.map((tech) => (
+                        <span
                             key={tech}
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: index * 0.1 + i * 0.05 }}
                             className="px-2 py-1 text-xs font-medium rounded-md bg-primary/10 text-primary border border-primary/20"
                         >
                             {tech}
-                        </motion.span>
+                        </span>
                     ))}
                 </div>
             </div>
