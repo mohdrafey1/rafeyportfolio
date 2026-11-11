@@ -130,6 +130,50 @@ It reminded me why I got into building things in the first place — not for met
     },
 
     {
+        id: "11",
+        title: "Waqt",
+        slug: "waqt",
+        description:
+            "A free, open-source, self-hosted coding time tracker that works with every WakaTime editor plugin and runs on Cloudflare's free plan, with full history, AI coding insights and README cards.",
+        longDescription:
+            "Waqt (\"time\" in Urdu/Hindi) is a self-hosted alternative to WakaTime. The official WakaTime plugins for 70+ editors send activity to your own Cloudflare Worker instead, so you keep your full history for free. It includes a private dashboard, AI coding insights (agent time, share of lines written by AI, tokens and models), time-of-day charts, goals with a weekly Discord/Telegram report, timesheets with invoices, one-click import of WakaTime history, SVG cards and a stats block for GitHub READMEs, and an embeddable public profile. Anyone can deploy their own copy with one click, and a GitHub Action keeps each copy up to date.",
+        techStack: [
+            "TypeScript",
+            "Cloudflare Workers",
+            "Cloudflare D1",
+            "Hono",
+            "SVG",
+            "Vitest",
+            "GitHub Actions",
+        ],
+        features: [
+            "Works with every WakaTime plugin: just change api_url",
+            "Full history forever on Cloudflare's free plan (₹0)",
+            "AI coding insights: agent time, AI vs. human lines, tokens and models",
+            "One-click import of WakaTime history, plus optional forwarding to WakaTime",
+            "README cards, badges and an auto-updating profile stats block",
+            "Goals, weekly Discord/Telegram reports, timesheets and invoices",
+            "One-click Deploy to Cloudflare and automatic updates for every copy",
+        ],
+        liveLink: "https://waqt.rafey.space/profile/",
+        githubLink: "https://github.com/mohdrafey1/Waqt",
+        image: "/projectimages/waqt.png",
+        featured: true,
+        projectType: "Personal",
+        storybehindproject: `I track my coding time with WakaTime, and I love the data. But the free plan only keeps one week of history, and I wanted all of it.
+
+So I asked myself: what if the same editor plugins sent my data to a server I own?
+
+WakaTime's editor plugins are open source, so they only need a different api_url. That became Waqt: a WakaTime-compatible API running on Cloudflare Workers with a D1 database, small enough to stay inside the free plan forever.
+
+The hardest part was the limits. The free plan gives a Worker only a few milliseconds of CPU per request, so everything had to be cheap. Heartbeats are rolled up into daily totals, public stats are cached, and importing years of WakaTime history happens in the browser, which counts the time with the same code as the server and sends back compact totals.
+
+Then I added what I was missing myself: how much of my code AI writes, which models I use, whether I'm an early bird or a night owl, goals with a weekly report on Telegram, and timesheets for client work.
+
+Waqt is open source. Anyone can deploy their own copy with one click, and the stats on this site come from mine.`,
+    },
+
+    {
         id: "3",
         title: "Quiz Arena",
         slug: "quiz-arena",
